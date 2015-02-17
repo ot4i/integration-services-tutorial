@@ -38,7 +38,7 @@
            result = javaGetSelectedTutorialFunction();
            
            var tutInfoString = result[0];
-           tut           = JSON.parse( tutInfoString );
+           tut = JSON.parse( tutInfoString );
 
       }//try
       catch(e){
@@ -57,7 +57,7 @@
 
 
         try {
-           result = javaDeleteProjectsFromWorkspaceFunction( [ tut.appName ,'BARfiles' ] );
+           result = javaDeleteProjectsFromWorkspaceFunction( [ tut.name ,tut.projects ] );
         }//try
         catch(e){
           alert( 'a java error occurred: ' + e.message );
