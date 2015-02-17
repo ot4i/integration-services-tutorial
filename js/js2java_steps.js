@@ -30,7 +30,7 @@
 
 
    function cleanUp() {
-      alert("inside cleanup");
+      alert("inside tutorials cleanup");
       var result = null;
       var tut = null;
       try {
