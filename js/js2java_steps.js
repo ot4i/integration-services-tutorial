@@ -39,6 +39,7 @@
            
            var tutInfoString = result[0];
            tut = JSON.parse( tutInfoString );
+           alert(tutInfoString);
 
       }//try
       catch(e){
@@ -57,6 +58,7 @@
 
 
         try {
+        	alert(tut.projects);
            result = javaDeleteProjectsFromWorkspaceFunction( [ tut.name ,tut.projects ] );
         }//try
         catch(e){
