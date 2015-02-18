@@ -31,6 +31,7 @@
 
    function cleanUp() {
 
+	   alert("Clean up invoked");
       var result = null;
       var tut = null;
       try {
