@@ -24,8 +24,6 @@
         }//catch
 
       }//if
-
-
    };
 
 
@@ -137,8 +135,6 @@
 
    function openHelpSystem(helpURL) {
 
-
-
       var result = null;
 
       try {
@@ -147,14 +143,10 @@
       catch(e){
           alert( 'a java error occurred: ' + e.message );
       }//catch
-
-
    };
 
 
    function viewDetails() {
-
-
       var result = null;
       var tut = null;
       try {
@@ -178,9 +170,6 @@
           alert( 'a java error occurred: ' + e.message );
         }//catch
 
-
       }//if
-
-
 
    };
