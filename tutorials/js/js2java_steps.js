@@ -38,7 +38,7 @@
           alert(result);
           var tutInfoString = result[0];
           tut = JSON.parse( tutInfoString );
-          alert(tut);
+
       }//try
       catch(e){
           alert( 'a java error in javaGetSelectedTutorialFunction occurred: ' + e.message );
@@ -47,7 +47,7 @@
       if (tut !== undefined){
 
         try {
-
+            alert(tut.deployedResources);
         	result = javaUnDeployResourcesFunction( tut.deployedResources);
         }//try
         catch(e){
