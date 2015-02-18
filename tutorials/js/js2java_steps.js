@@ -48,13 +48,12 @@
       if (tut !== undefined){
 
         try {
-           result = javaUnDeployResourcesFunction( tut.deployedResources);
+        	alert(tut);
+        	result = javaUnDeployResourcesFunction( tut.deployedResources);
         }//try
         catch(e){
           alert( 'a java error in javaUnDeployResourcesFunction occurred: ' + e.message );
-
         }//catch
-
 
         try {
         	//alert(tut.projects);
@@ -63,15 +62,9 @@
         catch(e){
           alert( 'a java error in javaDeleteProjectsFromWorkspaceFunction occurred: ' + e.message );
         }//catch
-
-
       }//if
-
-
-      
-
-
    };
+
    function deployArtifacts() {
 
       var result = null;
