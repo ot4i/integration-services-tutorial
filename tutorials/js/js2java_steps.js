@@ -34,12 +34,11 @@
       var result = null;
       var tut = null;
       try {
-            
-           result = javaGetSelectedTutorialFunction();
-           
-           var tutInfoString = result[0];
-           tut = JSON.parse( tutInfoString );
-
+    	  result = javaGetSelectedTutorialFunction();
+          alert(result);
+          var tutInfoString = result[0];
+          tut = JSON.parse( tutInfoString );
+          alert(tut);
       }//try
       catch(e){
           alert( 'a java error in javaGetSelectedTutorialFunction occurred: ' + e.message );
@@ -48,7 +47,7 @@
       if (tut !== undefined){
 
         try {
-        	alert(tut);
+
         	result = javaUnDeployResourcesFunction( tut.deployedResources);
         }//try
         catch(e){
