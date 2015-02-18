@@ -35,7 +35,6 @@
       var tut = null;
       try {
     	  result = javaGetSelectedTutorialFunction();
-          alert(result);
           var tutInfoString = result[0];
           tut = JSON.parse( tutInfoString );
 
@@ -47,6 +46,8 @@
       if (tut !== undefined){
 
         try {
+            alert("Deployed resources assigning");
+
             alert(tut.deployedResources);
         	result = javaUnDeployResourcesFunction( tut.deployedResources);
         }//try
