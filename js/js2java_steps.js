@@ -5,6 +5,7 @@
       try {
             
            result = javaGetSelectedTutorialFunction();
+           alert("(TUTORIAL)Importing the artifacts from : " + result);
            
            var tutInfoString = result[0];
            tut           = JSON.parse( tutInfoString );
@@ -48,13 +49,13 @@
 
       if (tut !== undefined){
 
-        try {
-           result = javaUnDeployResourcesFunction( 'TESTNODE_demond','default', tut.appName);
-        }//try
-        catch(e){
-          alert( 'a java error occurred: ' + e.message );
-
-        }//catch
+//        try {
+//           result = javaUnDeployResourcesFunction( 'TESTNODE_demond','default', tut.appName);
+//        }//try
+//        catch(e){
+//          alert( 'a java error occurred: ' + e.message );
+//
+//        }//catch
 
 
         try {
