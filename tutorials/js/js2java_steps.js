@@ -11,7 +11,7 @@
 
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaGetSelectedTutorialFunction occurred: ' + e.message );
       }//catch
 
       if (tut !== undefined){
@@ -20,7 +20,7 @@
            result = javaImportPIFileFunction(tut.name,tut.zipURL);
         }//try
         catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaImportPIFileFunction occurred: ' + e.message );
         }//catch
 
       }//if
@@ -42,7 +42,7 @@
 
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaGetSelectedTutorialFunction occurred: ' + e.message );
       }//catch
 
       if (tut !== undefined){
@@ -51,7 +51,7 @@
            result = javaUnDeployResourcesFunction( tut.deployedResources);
         }//try
         catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaUnDeployResourcesFunction occurred: ' + e.message );
 
         }//catch
 
@@ -61,7 +61,7 @@
            result = javaDeleteProjectsFromWorkspaceFunction(tut.projects.split(":"));
         }//try
         catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaDeleteProjectsFromWorkspaceFunction occurred: ' + e.message );
         }//catch
 
 
@@ -85,7 +85,7 @@
 
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaGetSelectedTutorialFunction occurred: ' + e.message );
       }//catch
 
       if (tut !== undefined){
@@ -94,7 +94,7 @@
            result = javaDeployBARFunction( tut.barFile );
         }//try
         catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaDeployBARFunction occurred: ' + e.message );
         }//catch
 
 
@@ -104,14 +104,13 @@
    };
 
    function backToGallery() {
-	   alert("Back to gallery called");
       var result=null;
 
         try {
            result = javaBackToGalleryFunction();
         }//try
         catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaBackToGalleryFunction occurred: ' + e.message );
       }//catch
 
 
@@ -129,7 +128,7 @@
            result = javaOpenURLInExternalBrowserFunction( externalURL );
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaOpenURLInExternalBrowserFunction occurred: ' + e.message );
       }//catch
 
 
@@ -145,7 +144,7 @@
            result = javaOpenURLInHelpSystemFunction( helpURL);
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaOpenURLInHelpSystemFunction occurred: ' + e.message );
       }//catch
 
 
@@ -166,7 +165,7 @@
 
       }//try
       catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaGetSelectedTutorialFunction occurred: ' + e.message );
       }//catch
 
       if (tut !== undefined){
@@ -175,7 +174,7 @@
            result = javaBackToDetailsFunction(tut.detailsURL);
         }//try
         catch(e){
-          alert( 'a java error occurred: ' + e.message );
+          alert( 'a java error in javaBackToDetailsFunction occurred: ' + e.message );
         }//catch
 
 
