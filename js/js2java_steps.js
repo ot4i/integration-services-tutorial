@@ -107,7 +107,7 @@
    };
 
    function backToGallery() {
-
+	   alert("Back to gallery called");
       var result=null;
 
         try {
