@@ -5,7 +5,6 @@
       try {
             
            result = javaGetSelectedTutorialFunction();
-           alert("(TUTORIAL)Importing the artifacts from : " + result);
            
            var tutInfoString = result[0];
            tut           = JSON.parse( tutInfoString );
@@ -40,7 +39,6 @@
            
            var tutInfoString = result[0];
            tut = JSON.parse( tutInfoString );
-           alert(tutInfoString);
 
       }//try
       catch(e){
@@ -59,8 +57,8 @@
 
 
         try {
-        	alert(tut.projects);
-           result = javaDeleteProjectsFromWorkspaceFunction( [ tut.name ,tut.projects ] );
+        	//alert(tut.projects);
+           result = javaDeleteProjectsFromWorkspaceFunction(tut.projects.split(":"));
         }//try
         catch(e){
           alert( 'a java error occurred: ' + e.message );
@@ -74,7 +72,6 @@
 
 
    };
-
    function deployArtifacts() {
 
       var result = null;
