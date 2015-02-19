@@ -50,7 +50,7 @@
             alert("Deployed resources assigning");
 
             alert(tut.deployedResources);
-        	result = javaUnDeployResourcesFunction( tut.deployedResources);
+        	result = javaUnDeployResourcesFunction( tut.name);
         }//try
         catch(e){
           alert( 'a java error in javaUnDeployResourcesFunction occurred: ' + e.message );
