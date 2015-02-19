@@ -46,10 +46,7 @@
       if (tut !== undefined){
 
         try {
-            alert("Deployed resources assigning");
-
-            alert(JSON.stringify(tut.deployedResources));
-        	result = javaUnDeployResourcesFunction(tut.name);
+        	result = javaUnDeployResourcesFunction();
         }//try
         catch(e){
           alert( 'a java error in javaUnDeployResourcesFunction occurred: ' + e.message );
