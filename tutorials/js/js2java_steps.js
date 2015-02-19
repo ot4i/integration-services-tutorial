@@ -24,11 +24,18 @@
         }//catch
 
       }//if
-
-
    };
 
 
+   function openResource(id) {
+	        try {
+	           result = javaOpenResourceEditorTutorialFunction(id);
+	        }//try
+	        catch(e){
+	          alert( 'a java error in javaImportPIFileFunction occurred: ' + e.message );
+	        }//catch
+   };
+   
    function cleanUp() {
 
       var result = null;
