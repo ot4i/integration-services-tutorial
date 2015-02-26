@@ -5,6 +5,7 @@
       try {
             
            result = javaGetSelectedTutorialFunction();
+           alert("(TUTORIAL)Importing the artifacts from : " + result);
            
            var tutInfoString = result[0];
            tut           = JSON.parse( tutInfoString );
@@ -28,7 +29,7 @@
 
 
    function cleanUp() {
-
+      alert("inside tutorials cleanup");
       var result = null;
       var tut = null;
       try {
@@ -36,7 +37,8 @@
            result = javaGetSelectedTutorialFunction();
            
            var tutInfoString = result[0];
-           tut           = JSON.parse( tutInfoString );
+           tut = JSON.parse( tutInfoString );
+           alert(tutInfoString);
 
       }//try
       catch(e){
@@ -45,17 +47,18 @@
 
       if (tut !== undefined){
 
+//        try {
+//           result = javaUnDeployResourcesFunction( 'TESTNODE_demond','default', tut.appName);
+//        }//try
+//        catch(e){
+//          alert( 'a java error occurred: ' + e.message );
+//
+//        }//catch
+
+
         try {
-           result = javaUnDeployResourcesFunction( 'TESTNODE_demond','default', tut.appName);
-        }//try
-        catch(e){
-          alert( 'a java error occurred: ' + e.message );
-
-        }//catch
-
-
-        try {
-           result = javaDeleteProjectsFromWorkspaceFunction( [ tut.appName ,'BARfiles' ] );
+        	alert(tut.projects);
+           result = javaDeleteProjectsFromWorkspaceFunction( [ tut.name ,tut.projects ] );
         }//try
         catch(e){
           alert( 'a java error occurred: ' + e.message );
@@ -102,7 +105,7 @@
    };
 
    function backToGallery() {
-
+	   alert("Back to gallery called");
       var result=null;
 
         try {
