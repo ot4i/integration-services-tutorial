@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+
+
 <html class="no-js" lang="en">
  
 	
 <!-- header::Start -->
 	<head>
+		<!-- Use Internet Explorer 9 Standards mode for Eclipse Browser Control - https://www.eclipse.org/swt/faq.php#browsernativeie and https://msdn.microsoft.com/en-us/library/jj676915%28v=vs.85%29.aspx -->
+  		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		
 		<meta http-equiv="Pragma" content="no-cache">
   		<meta http-equiv="Expires" content="-1">
   		
 
 		<meta charset="UTF-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 
 		<meta name="abstract" content="IBM Integration Bus V10 Tutorial">
 		<meta name="author" content="IBM">
@@ -24,229 +27,234 @@
 
     	<link rel="stylesheet" href="../../css/main.css" />
     	
-    	<script src="../../js/json2.js"></script>
-    	<script src="../../js/js2java.js"></script>
-		<script src="../../js/js2java_steps.js"></script>
+    	<script src="../../js/iibv10/json2.js"></script>
+    	<script src="../../js/iibv10/js2java.js"></script>
 
   		<script src="../../js/vendor/modernizr.js"></script>
 	</head>
 <!-- header::End -->
 <!-- body::Start -->
-	<body>
-	<!-- body content here -->
-		<div class="row">
-  <div class="small-12 medium-12 large-12 columns">
-    <p> </p>
-  </div>
-</div>
-<div class="row">
-  <div class="small-9 medium-9 large-9 columns">
-    <h4>Large messaging</h4>
-  </div>
-  <div class="small-3 medium-3 large-3 columns"> 
-    <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm')" class="small right">IBM Knowledge Center</a> 
-  </div>
-</div> 
-<hr>
-<div class="row">
-  <div class="small-12 medium-12 large-12 columns">
-    <h5> Split a large aggregate message into separate messages that can be processed individually by your system. </h5>
-  </div>
-</div>
-<div class="row">             
-  <div class="small-12 medium-12 large-12 columns">
-    <section class="tabs">
+		<body>
+  	<!-- body content here -->
+	<div class="row">
+	  <div class="small-12 medium-12 large-12 columns">
+	    <p> </p>
+	  </div>
+	</div>
+	<div class="row">
+	  <div class="small-9 medium-9 large-9 columns">
+	    <h4>Large messaging</h4>
+	  </div>
+	  <div class="small-3 medium-3 large-3 columns"> 
+	    <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm')" class="small right">IBM Knowledge Center</a> 
+	  </div>
+	</div> 
+	<hr>
+	<div class="row">
+	  <div class="small-12 medium-12 large-12 columns">
+	    <h5> Split a large aggregate message into separate messages that can be processed individually by your system. </h5>
+	  </div>
+	</div>
 
-      <input id="tabOverview" checked="checked" name="tab" type="radio">
-      <label for="tabOverview">
-        <p>Overview</p>
-      </label>
-      <div class="tab-content">
-	  	<div class="row panel radius">
-	      	<h4>Overview</h4>
-	        
-		    
-				<p> This tutorial uses a JavaCompute node to process a large input XML message that contains sales data, in the form of a list of SaleList child XML elements. The input message is split into 10 individual messages by creating a new message from each SaleList child element. In this tutorial, FileInput and FileOutput nodes are used to handle the input and output messages. </p>
-			
-				<p> You will import the LargeMessaging application to your Integration Toolkit workspace, deploy it to your default integration server, and create a test  message in an input directory that will be processed by the flow. You will record the path taken through the message flow by using the Flow Exerciser. </p>
-			
-		</div>		
-		<div class="row radius" style="margin-top:20px">
-		  
-			<div class="small-6 large-8 columns">
-				<h4>Find out more</h4>
-				<ul>
-				
-					
-					<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac30300_.htm')" title="Knowledge Center link to Writing Java">Writing Java</a> </li>
-				
-					
-					<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac55170_.htm')" title="Knowledge Center link to Working with files">Working with files</a> </li>
-				
-				</ul>
-			</div>
-			
-		</div>	
-	   </div><!-- tab-content -->
-
-		<input id="tabCreate" name="tab" type="radio">
-		<label for="tabCreate" class="radius">
-			<p>Create</p>
-		</label>
-		<div class="tab-content">
-	      	<div class="row panel radius">
-		      	<h4>Import projects</h4>
-		        
-			    
-					<p> The Large Messaging tutorial includes one project that is imported into your workspace. </p>
-				
-			</div>
-		<div class="row radius" style="margin-top:20px">
-		  
-			<div class="small-6 large-8 columns">
-				<h4>Find out more</h4>
-				<ul>
-				
-					
-					<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac30300_.htm')" title="Knowledge Center link to Writing Java">Writing Java</a> </li>
-				
-					
-					<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac55170_.htm')" title="Knowledge Center link to Working with files">Working with files</a> </li>
-				
-				</ul>
-			</div>
-			
-			<div class="small-6 large-4 columns">
-				<h4>Import<a href="javascript:;" onclick="importArtifacts()"> <img class="small-1 large-1" style="padding-top:0px; display:inline" src="../../images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
-		    </div>
-		</div>
-      	</div><!-- tab-content -->
-
-	    <input id="tabPrepare" name="tab" type="radio">
-		<label for="tabPrepare">
-			<p>Prepare</p>
-		</label>
-		<div class="tab-content">
-			<div class="row panel radius">
-		  	<h4>Imported projects</h4>
-		    
-		    
-				<p> The Large Messaging application has been imported into your workspace as LargeMessaging, and is shown in the Application Development view of your workspace. </p>
-			
-				<p>  </p>
-			
-				<p> The application will be deployed to your default integration server. The message flow is then running on your integration server and ready to process messages. </p>
-			
-		</div>
-		<div class="row radius" style="margin-top:20px">
-		  
-			<div class="small-6 large-8 columns">
-				<h4>Find out more</h4>
-				<ul>
-				
-					
-					<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac30300_.htm')" title="Knowledge Center link to Writing Java">Writing Java</a> </li>
-				
-					
-					<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac55170_.htm')" title="Knowledge Center link to Working with files">Working with files</a> </li>
-				
-				</ul>
-			</div>
-			
-			<div class="small-6 large-4 columns">
-				<h4>Deploy<a href="javascript:;" onclick="deployArtifacts()"> <img class="small-1 large-1" style="padding-top:0px; display:inline" src="../../images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
-		    </div>
-		</div>
-		</div><!-- tab-content -->
-
-	      <input id="tabRun" name="tab" type="radio">
-	      <label for="tabRun">
-	        <p>Run</p>
-	      </label>
-	      <div class="tab-content">
-      		<div class="row panel radius">
-	      	<h4>Follow these steps to complete the tutorial</h4>
-	        
-		    
-				<p> The LargeMessaging application is shown in the Application Development view of your workspace, and the LargeMessages main message flow is shown in the message flow editor. </p>
-				
-			
-				<p> You will create an input directory on your file system, and copy an input message into it for the flow to process. </p>
-				
-				
-					
-					<ol>
-					
-					
-						<li> In the message flow editor, click the Flow Exerciser record icon to start recording the message path through the flow. When the message is processed, you will see the path taken through the flow.
-						
-						</li>
-					
-						<li> The input node MessageWithRepeatingElements monitors an input directory on the file system. By default, this is set to <code>C:\temp_in</code>.
-						
-						</li>
-					
-						<li> Create an input directory on your file system that matches the directory that is monitored by the MessageWithRepeatingElements node.
-						
-						
+	<div class="row">          
+		  <div class="small-12 medium-12 large-12 columns">
+			<ul class="tabs" data-tab=""> 
+				<li class="tab-title tab-title-small active"> 
+				  <a href="#panel11">Overview</a>
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="#panel21">Create</a> 
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="#panel31">Prepare</a> 
+				</li>
+				<li class="tab-title tab-title-small">
+				  <a href="#panel41">Run</a> 
+				</li>
+			</ul>
+			<div class="tabs-content panel-thin-blue"> 
+			    <div class="content active" id="panel11">
+			    	<div class="small-12 medium-12 large-12 columns">
+				    	<div class="row content-details">
+					      	<h4>Overview</h4>
+					        
+						    
+								<p> This tutorial uses a JavaCompute node to process a large input XML message that contains sales data, in the form of a list of SaleList child XML elements. The input message is split into 10 individual messages by creating a new message from each SaleList child element. In this tutorial, FileInput and FileOutput nodes are used to handle the input and output messages. </p>
 							
-							<ul>
+								<p> You will import the LargeMessaging application to your Integration Toolkit workspace, deploy it to your default integration server, and create a test  message in an input directory that will be processed by the flow. You will record the path taken through the message flow by using the Flow Exerciser. </p>
 							
+						</div>
+						<hr>		
+						<div class="row">
+						  
+							<div class="small-6 large-8 columns">
+								<h4>Find out more</h4>
+								<ul>
 								
-									<li> Optional: You can change the default input directory by selecting the MessageWithRepeatingElements FileInput node and setting the Input directory property in the Properties view.</li>
+									
+									<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac30300_.htm')" title="Knowledge Center link to Writing Java">Writing Java</a> </li>
+								
+									
+									<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac55170_.htm')" title="Knowledge Center link to Working with files">Working with files</a> </li>
+								
+								</ul>
+							</div>
+							
+						</div>	
+					</div>
+				</div>
+		    	<div class="content" id="panel21">
+		    		<div class="small-12 medium-12 large-12 columns">
+				      	<div class="row content-details">
+					      	<h4>Import projects</h4>
+					        
+						    
+								<p> The Large Messaging tutorial includes one project that is imported into your workspace. </p>
+							
+						</div>
+						<hr>
+						<div class="row" style="margin-top:20px">
+						  
+							<div class="small-6 large-8 columns">
+								<h4>Find out more</h4>
+								<ul>
+								
+									
+									<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac30300_.htm')" title="Knowledge Center link to Writing Java">Writing Java</a> </li>
+								
+									
+									<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac55170_.htm')" title="Knowledge Center link to Working with files">Working with files</a> </li>
+								
+								</ul>
+							</div>
+							
+							<div class="small-6 large-4 columns">
+								<h4><a href="javascript:;" onclick="deployArtifacts()"> Import <img class="small-1 large-1" style="padding-top:0px; display:inline" src="../../images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+						    </div>
+						</div>
+					</div>
+		    	</div>
+		    	<div class="content" id="panel31">
+		    		<div class="small-12 medium-12 large-12 columns">
+						<div class="row content-details">
+						  	<h4>Imported projects</h4>
+						    
+						    
+								<p> The Large Messaging application has been imported into your workspace as LargeMessaging, and is shown in the Application Development view of your workspace. </p>
+							
+								<p>  </p>
+							
+								<p> The application will be deployed to your default integration server. The message flow is then running on your integration server and ready to process messages. </p>
+							
+						</div>
+						<hr>
+						<div class="row" style="margin-top:20px">
+						  
+							<div class="small-6 large-8 columns">
+								<h4>Find out more</h4>
+								<ul>
+								
+									
+									<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac30300_.htm')" title="Knowledge Center link to Writing Java">Writing Java</a> </li>
+								
+									
+									<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac55170_.htm')" title="Knowledge Center link to Working with files">Working with files</a> </li>
+								
+								</ul>
+							</div>
+							
+							<div class="small-6 large-4 columns">
+								<h4><a href="javascript:;" onclick="deployArtifacts()"> Deploy <img class="small-1 large-1" style="padding-top:0px; display:inline" src="../../images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+						    </div>
+						</div>
+					</div>
+		    	</div>
+		    	<div class="content" id="panel41">
+		    		<div class="small-12 medium-12 large-12 columns">
+				    	<div class="row content-details">
+					      	<h4>Follow these steps to complete the tutorial</h4>
+					        
+						    
+								<p> The LargeMessaging application is shown in the Application Development view of your workspace, and the LargeMessages main message flow is shown in the message flow editor. </p>
 								
 							
-							</ul>
+								<p> You will create an input directory on your file system, and copy an input message into it for the flow to process. </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> In the message flow editor, click the Flow Exerciser record icon to start recording the message path through the flow. When the message is processed, you will see the path taken through the flow.
+										
+										</li>
+									
+										<li> The input node MessageWithRepeatingElements monitors an input directory on the file system. By default, this is set to <code>C:\temp_in</code>.
+										
+										</li>
+									
+										<li> Create an input directory on your file system that matches the directory that is monitored by the MessageWithRepeatingElements node.
+										
+										
+											
+											<ul>
+											
+												
+													<li> Optional: You can change the default input directory by selecting the MessageWithRepeatingElements FileInput node and setting the Input directory property in the Properties view.</li>
+												
+											
+											</ul>
+											
+										
+										</li>
+									
+										<li> Copy the test XML message from <code>&lt;Integration Toolkit workspace&gt;/Large Messages/inputSalesList.xml</code> to the input directory.
+										
+										</li>
+									
+									
+									</ol>
+									
+								
 							
-						
-						</li>
-					
-						<li> Copy the test XML message from <code>&lt;Integration Toolkit workspace&gt;/Large Messages/inputSalesList.xml</code> to the input directory.
-						
-						</li>
-					
-					
-					</ol>
-					
-				
-			
-				<p> The file is processed by the message flow and deleted. </p>
-				
-			
-				<p> In the Integration Toolkit Flow Exerciser toolbar, click the View Path icon to highlight the message path through the message flow. You can click on any highlighted connection to see the message data that passed through that connection. </p>
-				
-			
-				<p> The input data has been split into 10 messages propagated to the Out terminal of the JavaCompute node named ProduceMessageSlicesFromRepeatingElement. You can double-click on the JavaCompute node to view the Java code that is executed to process the input message. </p>
-				
-			
-		</div>
-		<div class="row radius" style="margin-top:20px">
-		  
-			<div class="small-6 large-8 columns">
-				<h4>Find out more</h4>
-				<ul>
-				
-					
-					<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac30300_.htm')" title="Knowledge Center link to Writing Java">Writing Java</a> </li>
-				
-					
-					<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac55170_.htm')" title="Knowledge Center link to Working with files">Working with files</a> </li>
-				
-					
-					<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/rt26110.htm')" title="Knowledge Center link to Testing your message flow by using the Flow exerciser">Testing your message flow by using the Flow exerciser</a> </li>
-				
-				</ul>
-			</div>
-			
-			<div class="small-6 large-4 columns">
-				<h4>Clean up<a href="javascript:;" onclick="cleanUp()"> <img class="small-1 large-1" style="padding-top:0px; display:inline" src="../../images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
-		    </div>
-		</div>	
-		
-      </div><!-- tab-content -->
-    </section>
-  </div>
-</div>
+								<p> The file is processed by the message flow and deleted. </p>
+								
+							
+								<p> In the Integration Toolkit Flow Exerciser toolbar, click the View Path icon to highlight the message path through the message flow. You can click on any highlighted connection to see the message data that passed through that connection. </p>
+								
+							
+								<p> The input data has been split into 10 messages propagated to the Out terminal of the JavaCompute node named ProduceMessageSlicesFromRepeatingElement. You can double-click on the JavaCompute node to view the Java code that is executed to process the input message. </p>
+								
+							
+						</div>
+						<hr>
+						<div class="row" style="margin-top:20px">
+						  
+							<div class="small-6 large-8 columns">
+								<h4>Find out more</h4>
+								<ul>
+								
+									
+									<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac30300_.htm')" title="Knowledge Center link to Writing Java">Writing Java</a> </li>
+								
+									
+									<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac55170_.htm')" title="Knowledge Center link to Working with files">Working with files</a> </li>
+								
+									
+									<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/rt26110.htm')" title="Knowledge Center link to Testing your message flow by using the Flow exerciser">Testing your message flow by using the Flow exerciser</a> </li>
+								
+								</ul>
+							</div>
+							
+							<div class="small-6 large-4 columns">
+								<h4><a href="javascript:;" onclick="cleanUp()"> Clean up <img class="small-1 large-1" style="padding-top:0px; display:inline" src="../../images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+						    </div>
+						</div>	
+					</div>
+		    	</div>
+			</div> <!-- tab-content -->
+		</div> <!-- columns -->
+	  </div></body>
 		<script src="../../js/vendor/jquery.js"></script>
 		<script src="../../js/vendor/foundation.min.js"></script>
 		<script src="../../js/main.js"></script>
