@@ -70,7 +70,6 @@
    };
 
    function deployArtifacts() {
-
       var result = null;
       var tut = null;
       try {
@@ -78,7 +77,7 @@
            result = javaGetSelectedTutorialFunction();
            
            var tutInfoString = result[0];
-           tut           = JSON.parse( tutInfoString );
+           tut = JSON.parse( tutInfoString );
 
       }//try
       catch(e){
@@ -133,8 +132,6 @@
 
    function openHelpSystem(helpURL) {
 
-
-
       var result = null;
 
       try {
@@ -143,14 +140,10 @@
       catch(e){
           alert( 'a java error in javaOpenURLInHelpSystemFunction occurred: ' + e.message );
       }//catch
-
-
    };
 
 
    function viewDetails() {
-
-
       var result = null;
       var tut = null;
       try {
@@ -158,7 +151,7 @@
            result = javaGetSelectedTutorialFunction();
            
            var tutInfoString = result[0];
-           tut           = JSON.parse( tutInfoString );
+           tut = JSON.parse( tutInfoString );
 
       }//try
       catch(e){
@@ -174,9 +167,6 @@
           alert( 'a java error in javaBackToDetailsFunction occurred: ' + e.message );
         }//catch
 
-
       }//if
-
-
 
    };
