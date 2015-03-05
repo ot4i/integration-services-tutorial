@@ -1,0 +1,8 @@
+{
+  "globals": 
+  {
+    "_comment":"blank globals needed to compile layouts - https://github.com/sintaxi/harp/issues/333",
+    "project_name": "Tutorials with foundation5",  
+    "pageTitle":""
+  }
+}

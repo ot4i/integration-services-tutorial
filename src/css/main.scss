@@ -1,0 +1,10 @@
+@import "_settings547";
+@import "_foundation547/foundation";
+@import "_foundation547/normalize";
+@import "_ibmSettings";
+@import "_custom";
+ html, body {font-size: 85%; margin: 0 5px; }
+ div.manager-container { width: 80%; max-width:1200px; margin:auto; }
+ .icon-image {display: inline;}
+ h5.tabdescription { margin: 10px 0; } 
+ h4.tkaction { margin-top: 10px; text-align: center; }
