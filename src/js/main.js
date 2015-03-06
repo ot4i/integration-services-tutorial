@@ -1,11 +1,11 @@
 $(document).foundation();
 
 function show(clickId) {
-			var showdiv = document.getElementById(clickId);			
-			var tabUl = document.getElementsByClassName('tabs')[0];
-			var tabs = tabUl.getElementsByClassName('tab-title');			
-			var tabcontentdivs = document.getElementsByClassName('tabs-content')[0];
-			var tabcontentpanels = tabcontentdivs.getElementsByClassName('content');
+			var showdiv = document.getElementById(clickId);	
+			var tabUl = document.querySelector('.tabs');
+			var tabs = tabUl.querySelectorAll('.tab-title');			
+			var tabcontentdivs = document.querySelector('.tabs-content');
+			var tabcontentpanels = tabcontentdivs.querySelectorAll('.content');
 			
 			for (var j=0;j<tabcontentpanels.length;j++) {
 				if (tabcontentpanels[j].id == clickId) {				
