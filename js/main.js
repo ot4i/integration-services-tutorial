@@ -3,9 +3,9 @@ $(document).foundation();
 function show(clickId) {
 			var showdiv = document.getElementById(clickId);	
 			var tabUl = document.querySelector('.tabs');
-			var tabs = tabUl.querySelector('.tab-title');			
+			var tabs = tabUl.querySelectorAll('.tab-title');			
 			var tabcontentdivs = document.querySelector('.tabs-content');
-			var tabcontentpanels = tabcontentdivs.querySelector('.content');
+			var tabcontentpanels = tabcontentdivs.querySelectorAll('.content');
 			
 			for (var j=0;j<tabcontentpanels.length;j++) {
 				if (tabcontentpanels[j].id == clickId) {				
