@@ -1,4 +1,4 @@
-      function importArtifacts() {
+   function importArtifacts() {
 
       var result = null;
       var tut = null;
@@ -96,5 +96,77 @@
 
       }//if
 
+
+   };
+
+   function backToGallery() {
+      var result=null;
+
+        try {
+           result = javaBackToGalleryFunction();
+        }//try
+        catch(e){
+          alert( 'a java error in javaBackToGalleryFunction occurred: ' + e.message );
+      }//catch
+
+
+
+
+   };
+
+
+   function openExternalBrowser(externalURL) {
+
+
+      var result = null;
+
+      try {
+           result = javaOpenURLInExternalBrowserFunction( externalURL );
+      }//try
+      catch(e){
+          alert( 'a java error in javaOpenURLInExternalBrowserFunction occurred: ' + e.message );
+      }//catch
+
+
+   };
+
+   function openHelpSystem(helpURL) {
+
+      var result = null;
+
+      try {
+           result = javaOpenURLInHelpSystemFunction( helpURL);
+      }//try
+      catch(e){
+          alert( 'a java error in javaOpenURLInHelpSystemFunction occurred: ' + e.message );
+      }//catch
+   };
+
+
+   function viewDetails() {
+      var result = null;
+      var tut = null;
+      try {
+            
+           result = javaGetSelectedTutorialFunction();
+           
+           var tutInfoString = result[0];
+           tut = JSON.parse( tutInfoString );
+
+      }//try
+      catch(e){
+          alert( 'a java error in javaGetSelectedTutorialFunction occurred: ' + e.message );
+      }//catch
+
+      if (tut !== undefined){
+
+        try {
+           result = javaBackToDetailsFunction(tut.detailsURL);
+        }//try
+        catch(e){
+          alert( 'a java error in javaBackToDetailsFunction occurred: ' + e.message );
+        }//catch
+
+      }//if
 
    };
