@@ -60,7 +60,11 @@
 							<ul>
 							<% for (var i in tutorialSteps.concept.helpLinks.details) { %>
 								<% var link = tutorialSteps.concept.helpLinks.details[i] %>
+								<% if ((link.type) && (link.type == "web")) { %>
+								<li> <a href="<%= link.link %>" title="<%= link.title %> <%= link.description %>"><%= link.description %></a> </li>
+								<% } else { %>								
 								<li> <a href="javascript:;" onclick="openHelpSystem('/<%= link.link %>')" title="<%= link.title %><%= link.description %>"><%= link.description %></a> </li>
+							   <% } %>	
 							<% } %>
 							</ul>
 						</div>	
@@ -82,7 +86,11 @@
 							<ul>
 							<% for (var i in tutorialSteps.create.helpLinks.details) { %>
 								<% var link = tutorialSteps.create.helpLinks.details[i] %>
+								<% if ((link.type) && (link.type == "web")) { %>
+								<li> <a href="<%= link.link %>" title="<%= link.title %> <%= link.description %>"><%= link.description %></a> </li>
+								<% } else { %>								
 								<li> <a href="javascript:;" onclick="openHelpSystem('/<%= link.link %>')" title="<%= link.title %><%= link.description %>"><%= link.description %></a> </li>
+							   <% } %>	
 							<% } %>
 							</ul>
 						</div>
@@ -107,7 +115,11 @@
 							<ul>
 							<% for (var i in tutorialSteps.prepare.helpLinks.details) { %>
 								<% var link = tutorialSteps.prepare.helpLinks.details[i] %>
+								<% if ((link.type) && (link.type == "web")) { %>
+								<li> <a href="<%= link.link %>" title="<%= link.title %> <%= link.description %>"><%= link.description %></a> </li>
+								<% } else { %>								
 								<li> <a href="javascript:;" onclick="openHelpSystem('/<%= link.link %>')" title="<%= link.title %><%= link.description %>"><%= link.description %></a> </li>
+							   <% } %>	
 							<% } %>
 							</ul>
 						</div>
@@ -165,7 +177,11 @@
 							<ul>
 							<% for (var i in tutorialSteps.run.helpLinks.details) { %>
 								<% var link = tutorialSteps.run.helpLinks.details[i] %>
+								<% if ((link.type) && (link.type == "web")) { %>
+								<li> <a href="<%= link.link %>" title="<%= link.title %> <%= link.description %>"><%= link.description %></a> </li>
+								<% } else { %>								
 								<li> <a href="javascript:;" onclick="openHelpSystem('/<%= link.link %>')" title="<%= link.title %><%= link.description %>"><%= link.description %></a> </li>
+							   <% } %>	
 							<% } %>
 							</ul>
 						</div>

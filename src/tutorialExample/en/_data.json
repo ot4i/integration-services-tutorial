@@ -72,12 +72,19 @@
           ]
         },
         "helpLinks":{
+		  "_helpLinksComment": "Helplinks that have a type:web attribute are rendered as web links. Otherwise, links are assumed to be to embedded Help topics in the Knowledge Center.",
           "title":"Find out more",
           "details":[
             {
               "title":"Knowledge Center link to ",
               "description":"Developing integration solutions by using applications",
               "link":"com.ibm.etools.mft.doc/bi12002_.htm"
+            },
+			{
+              "title":"GitHub link to ",
+              "description":"DFDL Schemas",
+              "link":"http://github.com/DFDLSchemas",
+			  "type":"web"
             }
           ]
         }
