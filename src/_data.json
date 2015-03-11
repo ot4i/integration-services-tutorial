@@ -1,5 +1,5 @@
 {
-  "version":"0.3",
+  "version":"0.5",
   "description":"Tutorial Framework with Foundation5.",
   "sitemap": 
   {
@@ -24,6 +24,12 @@
 	    "metaAuthor":"IBM",
 	    "keywords":"keywords",
 	    "robots":"index,follow",
-	    "source":"IBM Integration Bus V10 Tutorial"
+	    "source":"IBM Integration Bus V10 Tutorial",
+		"repoUrlProtocol":"http://",
+		"repoUrlSite":"ot4i.github.io",
+		"repoUrlFilepathCss":"/ot4i.tutorials/dist/css/main.css",
+		"repoUrlFilepathJson2":"/ot4i.tutorials/dist/js/json2.js",
+		"repoUrlFilepathJs2java":"/ot4i.tutorials/dist/js/js2java.js"
+		"repoUrlFilepathJs2javaSteps":"ot4i.tutorials/dist/js/js2java_steps.js"
 	  }
 } 

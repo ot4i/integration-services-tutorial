@@ -1,20 +1,27 @@
 {
-  "version":"0.4",
-  "pageContent":{
-    "comments":"Must use underscore for en-us.",
-    "navItems":{
-      "_common":{
-        "buttonBackToGallery":{
+  "version":"0.5",
+  "pageContent":
+  {
+    "_comments":"JSON object that contains data for page labels, buttons, etc.",
+    "navItems":
+	{
+      "_common":
+	  {
+        "buttonBackToGallery":
+		{
           "text":"Back To Gallery"
         },
-        "buttonStartTutorial":{
+        "buttonStartTutorial":
+		{
           "text":"Start Tutorial"
         }
       }
     }
   },
-  "tutorial":{
-    "_common":{
+  "tutorial":
+  {
+    "_common":
+	{
       "name":"HTTP Input to drive a message flow",
       "shortDescription":"Learn how to use an HTTPInput node to parse JSON data in an IBM Integration Bus message flow by exploring this simple example.",
       "durationText":"This tutorial takes approximately",
@@ -22,10 +29,12 @@
       "_resourceToOpenComment":"The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
       "resourceToOpen":"MainFlow"
     },
-    "pageDetails":{
+    "pageDetails":
+	{
       "topicsName":"Tutorial Topics",
       "_topicListComment":"A short list of product concepts or tasks demonstrated by this tutorial",
-      "topicList":[
+      "topicList":
+	  [
         {
           "title":"HTTP Input node"
         },
@@ -38,7 +47,8 @@
       ],
       "outcomesName":"Learning outcomes",
       "_outcomesComment":"A description of what the user will have learned or accomplished by running this tutorial.",
-      "outcomeList":[
+      "outcomeList":
+	  [
         {
           "title":"Use IBM Integration Bus to create and invoke a JSON/HTTP request-response message flow."
         }
@@ -78,7 +88,8 @@
             {
               "title":"Knowledge Center link to ",
               "description":"Developing integration solutions by using applications",
-              "link":"com.ibm.etools.mft.doc/bi12002_.htm"
+              "link":"com.ibm.etools.mft.doc/bi12002_.htm",
+			  "type":"help"
             },
 			{
               "title":"GitHub link to ",
