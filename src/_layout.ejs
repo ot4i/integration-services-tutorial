@@ -1,6 +1,4 @@
 <!DOCTYPE html><% /* DNA-Comment: This DOCTYPE means this is an HTML5 document - http://www.w3.org/html/wg/drafts/html/master/single-page.html  */ %>
-<% /* <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]--> */ %>
-<% /* See http://foundation.zurb.com/forum/posts/2849-purpose-of-ie9-comment-with-lt-ie10-class, http://zurb.com/article/1204/getting-foundation-and-ie8-to-play-nice, http://foundation.zurb.com/forum/posts/3330-ie9-and-foundation-5 */ %>
 <html class="no-js" lang="en">
 <% if (public._data) { %> <% /* DNA-Comment: Make sure we have header data  */ %>
 	<% var header = public._data.header %>
@@ -9,6 +7,7 @@
 		<!-- Use Internet Explorer 9 Standards mode for Eclipse Browser Control - https://www.eclipse.org/swt/faq.php#browsernativeie and https://msdn.microsoft.com/en-us/library/jj676915%28v=vs.85%29.aspx -->
   		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 		
+		<!-- Next 2 http=equiv headers required to disable caching the Eclipse Browser Widget -->
 		<meta http-equiv="Pragma" content="no-cache">
   		<meta http-equiv="Expires" content="-1">
 
@@ -25,19 +24,23 @@
 		
 		<title><%= header.source %></title>
 
-    	<link rel="stylesheet" href="http://ot4i.github.io/ot4i.tutorials/dist/css/main.css" /><% /* DNA-Comment: Foundation5 CSS and overrides  */ %>
+    	<link rel="stylesheet" href="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathCss %>" /><% /* DNA-Comment: Foundation5 5.4.7 CSS */ %>
+		<link rel="stylesheet" href="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathCssApp %>" /><% /* DNA-Comment: Foundation5 5.4.7 overrides */ %>
     	
-    	<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/json2.js"></script><% /* DNA-Comment: IIB eclipse JavaScript to call Java APIs */ %>
-    	<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/js2java.js"></script>
-		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/js2java_steps.js"></script>
-  		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/vendor/modernizr.js"></script><% /* DNA-Comment: Foundation5 CSS and overrides  */ %>
+		<script src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathJson2 %>"></script><% /* DNA-Comment: IIB eclipse JavaScript to call Java APIs */ %>
+		<script src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathJs2java %>"></script><% /* DNA-Comment: IIB eclipse JavaScript to call Java APIs */ %>
+		<script src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathJs2javaSteps %>"></script><% /* DNA-Comment: IIB eclipse JavaScript to call Java APIs */ %>
+		<script src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathFoundationModernizr %>"></script><% /* DNA-Comment: Foundation5 5.4.7 modernizr */ %>
 	</head>
 <!-- header::End -->
 <!-- body::Start -->
 		<%- yield %><% /* DNA-Comment: Insert content here. */ %>
-		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/vendor/jquery.js"></script>
-		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/vendor/foundation.min.js"></script>
-		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/main.js"></script>
+		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/vendor/jquery.js"></script><% /* DNA-Comment: Foundation5 5.4.7 jquery */ %>
+		<script src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathFoundationJquery %>"></script><% /* DNA-Comment: Foundation5 5.4.7 jquery */ %>
+		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/vendor/foundation.min.js"></script><% /* DNA-Comment: Foundation5 5.4.7 JavaScript */ %>
+		<script src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathFoundationJs %>"></script><% /* DNA-Comment: Foundation5 5.4.7 JavaScript */ %>
+		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/main.js"></script><% /* DNA-Comment: Custom JavaScript */ %>
+		<script src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathJs %>"></script><% /* DNA-Comment: Custom JavaScript */ %>
 	</body>
 <!-- body::End -->
 <% } %>

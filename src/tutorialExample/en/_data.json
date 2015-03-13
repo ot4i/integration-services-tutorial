@@ -1,31 +1,45 @@
 {
-  "version":"0.4",
-  "pageContent":{
-    "comments":"Must use underscore for en-us.",
-    "navItems":{
-      "_common":{
-        "buttonBackToGallery":{
+  "version":"0.5",
+  "pageContent":
+  {
+    "_comments":"JSON object that contains data for page labels, buttons, etc.",
+    "navItems":
+	{
+      "_common":
+	  {
+        "buttonBackToGallery":
+		{
           "text":"Back To Gallery"
         },
-        "buttonStartTutorial":{
+        "buttonStartTutorial":
+		{
           "text":"Start Tutorial"
         }
       }
     }
   },
-  "tutorial":{
-    "_common":{
-      "name":"HTTP Input to drive a message flow",
-      "shortDescription":"Learn how to use an HTTPInput node to parse JSON data in an IBM Integration Bus message flow by exploring this simple example.",
-      "durationText":"This tutorial takes approximately",
-      "durationTime":"5 minutes",
-      "_resourceToOpenComment":"The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
-      "resourceToOpen":"MainFlow"
+  "tutorial":
+  {
+    "_common":
+	{
+		"name":"HTTP Input to drive a message flow",
+		"shortDescription":"Learn how to use an HTTPInput node to parse JSON data in an IBM Integration Bus message flow by exploring this simple example.",
+		"durationText":"This tutorial takes approximately",
+		"durationTime":"5 minutes",
+		"_resourceToOpenComment":"The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
+		"resourceToOpen":"MainFlow",
+		"helpLink":
+		{
+		  "text":"IBM Knowledge Center",
+		  "link":"/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm"
+		}
     },
-    "pageDetails":{
+    "pageDetails":
+	{
       "topicsName":"Tutorial Topics",
       "_topicListComment":"A short list of product concepts or tasks demonstrated by this tutorial",
-      "topicList":[
+      "topicList":
+	  [
         {
           "title":"HTTP Input node"
         },
@@ -38,7 +52,8 @@
       ],
       "outcomesName":"Learning outcomes",
       "_outcomesComment":"A description of what the user will have learned or accomplished by running this tutorial.",
-      "outcomeList":[
+      "outcomeList":
+	  [
         {
           "title":"Use IBM Integration Bus to create and invoke a JSON/HTTP request-response message flow."
         }
@@ -56,13 +71,17 @@
         ]
       }
     },
-    "pageSteps":{
-      "concept":{
-        "overview":{
+    "pageSteps":
+	{
+      "concept":
+	  {
+        "overview":
+		{
           "name":"Overview",
           "heading":"Overview",
           "_overviewComment":"A short description of what this tutorial does, and what the user will do to run the tutorial.",
-          "sections":[
+          "sections":
+		  [
             {
               "section":"This tutorial demonstrates a simple message flow that receives JSON data over HTTP. The flow transforms the input JSON structure into a different output JSON structure using a graphical data mapping node and sends this back to the HTTP request."
             },
@@ -78,7 +97,8 @@
             {
               "title":"Knowledge Center link to ",
               "description":"Developing integration solutions by using applications",
-              "link":"com.ibm.etools.mft.doc/bi12002_.htm"
+              "link":"com.ibm.etools.mft.doc/bi12002_.htm",
+			  "type":"help"
             },
 			{
               "title":"GitHub link to ",
@@ -89,20 +109,25 @@
           ]
         }
       },
-      "create":{
-        "overview":{
+      "create":
+	  {
+        "overview":
+		{
           "name":"Create",
           "heading":"Import projects",
           "_createComment":"A description of what will happen when the user clicks Import.",
-          "sections":[
+          "sections":
+		  [
             {
               "section":"The HTTPInputApplication application includes one project that is imported into your workspace."
             }
           ]
         },
-        "helpLinks":{
+        "helpLinks":
+		{
           "title":"Find out more",
-          "details":[
+          "details":
+		  [
             {
               "title":"Knowledge Center link to ",
               "description":"Developing integration solutions by using applications",
@@ -110,7 +135,18 @@
             }
           ]
         },
-        "actionName":"Import"
+		"actionName":"Import",
+		"actions":
+		{
+			"title":"Create Actions",
+			"details":
+			[
+				{
+					"name":"Import",
+					"method":"importArtifacts()"
+				}
+			]
+		}
       },
       "prepare":{
         "overview":{
@@ -129,9 +165,11 @@
             }
           ]
         },
-        "helpLinks":{
+        "helpLinks":
+		{
           "title":"Find out more",
-          "details":[
+          "details":
+		  [
             {
               "title":"Knowledge Center link to ",
               "description":"Developing integration solutions by using integration services",
