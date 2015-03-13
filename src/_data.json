@@ -1,5 +1,5 @@
 {
-  "version":"0.3",
+  "version":"0.5",
   "description":"Tutorial Framework with Foundation5.",
   "sitemap": 
   {
@@ -16,6 +16,43 @@
 	"managerVersion": "1.0",
 	"downloadableForLocalInstall":"https://github.com/ot4i/tutorials/releases/download/localInstall.zip",
 "separatorFrameworkListJSON":{},
+	"_comments":
+	{
+"separator-ot4i":"",
+		"repoUrlProtocol":"http://",
+		"repoUrlSite":"ot4i.github.io",
+		
+		"repoUrlFilepathCss":"/ot4i.tutorials/dist/css/main.css",
+		"repoUrlFilepathCssApp":"/ot4i.tutorials/dist/css/app.css",
+		"repoUrlFilepathJs":"/ot4i.tutorials/dist/js/main.js",
+		
+		"repoUrlFilepathFoundationModernizr":"/ot4i.tutorials/dist/js/vendor/modernizr.js",
+		"repoUrlFilepathFoundationJquery":"ot4i.tutorials/dist/js/vendor/jquery.js",
+		"repoUrlFilepathFoundationJs":"/ot4i.tutorials/dist/js/vendor/foundation.min.js",
+		
+		"repoUrlFilepathJson2":"/ot4i.tutorials/dist/js/json2.js",
+		"repoUrlFilepathJs2java":"/ot4i.tutorials/dist/js/js2java.js",
+		"repoUrlFilepathJs2javaSteps":"/ot4i.tutorials/dist/js/js2java_steps.js",
+		"repoUrlFilepathActionIcon":"/ot4i.tutorials/dist/images/icons/ibmdesign/back-right-previous_128-orange.png",
+
+"separator-Local":"",
+		"repoUrlProtocol":"http://",
+		"repoUrlSite":"localhost:3000",
+		
+		"repoUrlFilepathCss":"/css/main.css",
+		"repoUrlFilepathCssApp":"/css/app.css",
+		"repoUrlFilepathJs":"/js/main.js",
+		
+		"repoUrlFilepathFoundationModernizr":"/js/vendor/modernizr.js",
+		"repoUrlFilepathFoundationJquery":"/js/vendor/jquery.js",
+		"repoUrlFilepathFoundationJs":"/js/vendor/foundation.min.js",
+		
+		"repoUrlFilepathJson2":"/js/json2.js",
+		"repoUrlFilepathJs2java":"/js/js2java.js",
+		"repoUrlFilepathJs2javaSteps":"/js/js2java_steps.js",
+		
+		"repoUrlFilepathActionIcon":"/images/icons/ibmdesign/back-right-previous_128-orange.png"
+	},
 	"header":
 	  {
 	    "lang":"en-us",
@@ -24,6 +61,23 @@
 	    "metaAuthor":"IBM",
 	    "keywords":"keywords",
 	    "robots":"index,follow",
-	    "source":"IBM Integration Bus V10 Tutorial"
+	    "source":"IBM Integration Bus V10 Tutorial",
+		
+		"repoUrlProtocol":"http://",
+		"repoUrlSite":"localhost:3000",
+		
+		"repoUrlFilepathCss":"/css/main.css",
+		"repoUrlFilepathCssApp":"/css/app.css",
+		"repoUrlFilepathJs":"/js/main.js",
+		
+		"repoUrlFilepathFoundationModernizr":"/js/vendor/modernizr.js",
+		"repoUrlFilepathFoundationJquery":"/js/vendor/jquery.js",
+		"repoUrlFilepathFoundationJs":"/js/vendor/foundation.min.js",
+		
+		"repoUrlFilepathJson2":"/js/json2.js",
+		"repoUrlFilepathJs2java":"/js/js2java.js",
+		"repoUrlFilepathJs2javaSteps":"/js/js2java_steps.js",
+		
+		"repoUrlFilepathActionIcon":"/images/icons/ibmdesign/back-right-previous_128-orange.png"
 	  }
 } 
