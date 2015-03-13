@@ -18,7 +18,7 @@
 "separatorFrameworkListJSON":{},
 	"_comments":
 	{
-"separator-ot4i":"",
+"separator-ot4i":{},
 		"repoUrlProtocol":"http://",
 		"repoUrlSite":"ot4i.github.io",
 		
@@ -34,8 +34,9 @@
 		"repoUrlFilepathJs2java":"/ot4i.tutorials/dist/js/js2java.js",
 		"repoUrlFilepathJs2javaSteps":"/ot4i.tutorials/dist/js/js2java_steps.js",
 		"repoUrlFilepathActionIcon":"/ot4i.tutorials/dist/images/icons/ibmdesign/back-right-previous_128-orange.png",
+		"repoUrlFilepathExitIcon":"/ot4i.tutorials/dist/images/icons/ibmdesign/close-cancel-error_128-red.png",
 
-"separator-Local":"",
+"separator-Local":{},
 		"repoUrlProtocol":"http://",
 		"repoUrlSite":"localhost:3000",
 		
@@ -51,33 +52,35 @@
 		"repoUrlFilepathJs2java":"/js/js2java.js",
 		"repoUrlFilepathJs2javaSteps":"/js/js2java_steps.js",
 		
-		"repoUrlFilepathActionIcon":"/images/icons/ibmdesign/back-right-previous_128-orange.png"
+		"repoUrlFilepathActionIcon":"/images/icons/ibmdesign/back-right-previous_128-orange.png",
+		"repoUrlFilepathExitIcon":"/images/icons/ibmdesign/close-cancel-error_128-red.png"
 	},
 	"header":
-	  {
-	    "lang":"en-us",
-	    "charset":"UTF-8",
-	    "metaDescription":"IBM Integration Bus V10 Tutorial",
-	    "metaAuthor":"IBM",
-	    "keywords":"keywords",
-	    "robots":"index,follow",
-	    "source":"IBM Integration Bus V10 Tutorial",
-		
-		"repoUrlProtocol":"http://",
-		"repoUrlSite":"localhost:3000",
-		
-		"repoUrlFilepathCss":"/css/main.css",
-		"repoUrlFilepathCssApp":"/css/app.css",
-		"repoUrlFilepathJs":"/js/main.js",
-		
-		"repoUrlFilepathFoundationModernizr":"/js/vendor/modernizr.js",
-		"repoUrlFilepathFoundationJquery":"/js/vendor/jquery.js",
-		"repoUrlFilepathFoundationJs":"/js/vendor/foundation.min.js",
-		
-		"repoUrlFilepathJson2":"/js/json2.js",
-		"repoUrlFilepathJs2java":"/js/js2java.js",
-		"repoUrlFilepathJs2javaSteps":"/js/js2java_steps.js",
-		
-		"repoUrlFilepathActionIcon":"/images/icons/ibmdesign/back-right-previous_128-orange.png"
-	  }
+	{
+	"lang":"en-us",
+	"charset":"UTF-8",
+	"metaDescription":"IBM Integration Bus V10 Tutorial",
+	"metaAuthor":"IBM",
+	"keywords":"keywords",
+	"robots":"index,follow",
+	"source":"IBM Integration Bus V10 Tutorial",
+
+	"repoUrlProtocol":"http://",
+	"repoUrlSite":"localhost:3000",
+
+	"repoUrlFilepathCss":"/css/main.css",
+	"repoUrlFilepathCssApp":"/css/app.css",
+	"repoUrlFilepathJs":"/js/main.js",
+
+	"repoUrlFilepathFoundationModernizr":"/js/vendor/modernizr.js",
+	"repoUrlFilepathFoundationJquery":"/js/vendor/jquery.js",
+	"repoUrlFilepathFoundationJs":"/js/vendor/foundation.min.js",
+
+	"repoUrlFilepathJson2":"/js/json2.js",
+	"repoUrlFilepathJs2java":"/js/js2java.js",
+	"repoUrlFilepathJs2javaSteps":"/js/js2java_steps.js",
+
+	"repoUrlFilepathActionIcon":"/images/icons/ibmdesign/back-right-previous_128-orange.png",
+	"repoUrlFilepathExitIcon":"/images/icons/ibmdesign/close-cancel-error_128-red.png"
+	}
 } 
