@@ -1,3 +1,4 @@
+<% var header = public._data.header %>
 <% var content = thisTutorial.pageContent.navItems %>
 <% var tutorialCommon = thisTutorial.tutorial._common %>
 <% var tutorialSteps = thisTutorial.tutorial.pageSteps %>
@@ -14,19 +15,21 @@
 	  </div>
 	  <div class="small-3 medium-3 large-3 columns">
 	  	<div class="row">
-	    	<a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm');" class="small right helplink">IBM Knowledge Center</a> 
+			<a href="javascript:;" onclick="openHelpSystem('<%= tutorialCommon.helpLink.link %>');" class="small right helplink"><%= tutorialCommon.helpLink.text %></a> 
+		</div>
+		<div class="row"><p></p></div>
+		<div class="row">
+			<div class="small radius button right" id="backToGallery" onclick="backToGallery()"> <%= content._common.buttonBackToGallery.text %>
+			</div>
 		</div>
 	  </div>
 	</div> 
 	<hr />
 	<div class="row">
-	  <div class="small-9 medium-10 large-10 columns">
+	  <div class="small-12 medium-12 large-12 columns">
 	    <h5> <%= tutorialCommon.shortDescription %> </h5>
 	  </div>
-			<div class="small radius button right" id="backToGallery" onclick="backToGallery()"> <%= content._common.buttonBackToGallery.text %>
-			</div>
 	</div>
-
 	<div class="row">          
 		  <div class="small-12 medium-12 large-12 columns">
 			<ul class="tabs vertical"> 
@@ -89,16 +92,21 @@
 								<% if ((link.type) && (link.type == "web")) { %>
 								<li> <a href="<%= link.link %>" title="<%= link.title %> <%= link.description %>"><%= link.description %></a> </li>
 								<% } else { %>								
-								<li> <a href="javascript:;" onclick="openHelpSystem('/<%= link.link %>')" title="<%= link.title %><%= link.description %>"><%= link.description %></a> </li>
+								<li> <a href="javascript:;" onclick="openHelpSystem('/<%= link.link %>');" title="<%= link.title %><%= link.description %>"><%= link.description %></a> </li>
 							   <% } %>	
 							<% } %>
 							</ul>
 						</div>
 						<% } %>
 					</div>
+					<% if (tutorialSteps.create.actions) { %>
 					<div class="small-2 medium-2 large-2 columns">
-					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('<%= tutorialCommon.resourceToOpen %>');"> <%= tutorialSteps.create.actionName %> <img class="icon-image" src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/ibmdesign/back-right-previous_128-orange.png" /></a></h4>						
+					<% for (var i in tutorialSteps.create.actions.details) { %>
+					<% var link = tutorialSteps.create.actions.details[i] %>
+					<h4 class="tkaction"><a href="javascript:;" onclick="<%= link.method %>; openResource('<%= tutorialCommon.resourceToOpen %>');"> <%= link.name %> <img class="icon-image" src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathActionIcon %>" /></a></h4>						
 				    </div>
+					<% } %>
+					<% } %>
 		    	</div>
 		    	<div class="content" id="panel31">
 		    		<div class="small-10 medium-10 large-10 columns divider">
