@@ -47,11 +47,11 @@
           </div>
           <div class="row" style="margin-left: 1rem; text-align: center;">
             <action>
-              <div class="small radius button" id="startTutorial" onclick="startTutorialFromDetailsScreen()"> <%= content._common.buttonStartTutorial.text %>
+              <div class="small radius button" id="<%= content._common.buttonStartTutorial.idName %>" onclick="<%= content._common.buttonStartTutorial.method %>;"> <%= content._common.buttonStartTutorial.name %>
             </div>
             </action>
-            <div class="small radius button" id="backToGallery" onclick="backToGallery()"> <%= content._common.buttonBackToGallery.text %>
-            </div>
+            <div class="small radius button" id="<%= content._common.buttonBackToGallery.idName %>" onclick="<%= content._common.buttonBackToGallery.method %>;"> <%= content._common.buttonBackToGallery.name %>
+			</div>
           </div>
         </div>
       </div>

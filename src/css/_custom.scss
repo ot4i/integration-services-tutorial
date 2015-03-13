@@ -272,7 +272,9 @@ p
   padding: 0rem 0.5rem;
 }
 
-#backToGallery
+.center-item
 {
-	margin:0px;
+	text-align: center;
+	margin-left: auto;
+    margin-right: auto;
 }

@@ -27,7 +27,7 @@
 		"repoUrlFilepathJs":"/ot4i.tutorials/dist/js/main.js",
 		
 		"repoUrlFilepathFoundationModernizr":"/ot4i.tutorials/dist/js/vendor/modernizr.js",
-		"repoUrlFilepathFoundationJquery":"ot4i.tutorials/dist/js/vendor/jquery.js",
+		"repoUrlFilepathFoundationJquery":"/ot4i.tutorials/dist/js/vendor/jquery.js",
 		"repoUrlFilepathFoundationJs":"/ot4i.tutorials/dist/js/vendor/foundation.min.js",
 		
 		"repoUrlFilepathJson2":"/ot4i.tutorials/dist/js/json2.js",
@@ -74,7 +74,7 @@
 		"repoUrlFilepathJs":"/ot4i.tutorials/dist/js/main.js",
 		
 		"repoUrlFilepathFoundationModernizr":"/ot4i.tutorials/dist/js/vendor/modernizr.js",
-		"repoUrlFilepathFoundationJquery":"ot4i.tutorials/dist/js/vendor/jquery.js",
+		"repoUrlFilepathFoundationJquery":"/ot4i.tutorials/dist/js/vendor/jquery.js",
 		"repoUrlFilepathFoundationJs":"/ot4i.tutorials/dist/js/vendor/foundation.min.js",
 		
 		"repoUrlFilepathJson2":"/ot4i.tutorials/dist/js/json2.js",
