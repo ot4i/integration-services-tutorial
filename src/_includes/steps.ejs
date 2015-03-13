@@ -75,7 +75,11 @@
 					</div>
 				</div>
 		    	<div class="content" id="panel21">
+		    		<% if (tutorialSteps.create.actions) { %>
 		    		<div class="small-10 medium-10 large-10 columns divider">
+					<% } else { %>
+					<div class="small-12 medium-12 large-12 columns">
+					<% } %>
 				      	<div class="row content-details">
 					      	<h4><%= tutorialSteps.create.overview.heading %></h4>
 					        <% var sections = tutorialSteps.create.overview.sections %>
@@ -103,13 +107,17 @@
 					<div class="small-2 medium-2 large-2 columns">
 					<% for (var i in tutorialSteps.create.actions.details) { %>
 					<% var link = tutorialSteps.create.actions.details[i] %>
-					<h4 class="tkaction"><a href="javascript:;" onclick="<%= link.method %>; openResource('<%= tutorialCommon.resourceToOpen %>');"> <%= link.name %> <img class="icon-image" src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathActionIcon %>" /></a></h4>						
+					<h4 class="tkaction"><a href="javascript:;" onclick="<%= link.method %>; openResource('<%= tutorialCommon.resourceToOpen %>');"> <%= link.name %> <img class="icon-image" src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathActionIcon %>" /></a></h4>
+					<% } %>					
 				    </div>
-					<% } %>
 					<% } %>
 		    	</div>
 		    	<div class="content" id="panel31">
+					<% if (tutorialSteps.prepare.actions) { %>
 		    		<div class="small-10 medium-10 large-10 columns divider">
+					<% } else { %>
+					<div class="small-12 medium-12 large-12 columns">
+					<% } %>
 						<div class="row content-details">
 						  	<h4><%= tutorialSteps.prepare.overview.heading %></h4>
 						    <% var sections = tutorialSteps.prepare.overview.sections %>
@@ -133,12 +141,21 @@
 						</div>
 						<% } %>	
 					</div>
+					<% if (tutorialSteps.prepare.actions) { %>
 					<div class="small-2 medium-2 large-2 columns">
-						<h4 class="tkaction"><a href="javascript:;" onclick="deployArtifacts();"> <%= tutorialSteps.prepare.actionName %> <img class="icon-image" src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/ibmdesign/back-right-previous_128-orange.png" /></a></h4>
+					<% for (var i in tutorialSteps.prepare.actions.details) { %>
+					<% var link = tutorialSteps.prepare.actions.details[i] %>
+					<h4 class="tkaction"><a href="javascript:;" onclick="<%= link.method %>;"> <%= link.name %> <img class="icon-image" src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathActionIcon %>" /></a></h4>						
+				    <% } %>					
 				    </div>
+					<% } %>
 		    	</div>
 		    	<div class="content" id="panel41">
+		    		<% if (tutorialSteps.run.actions) { %>
 		    		<div class="small-10 medium-10 large-10 columns divider">
+					<% } else { %>
+					<div class="small-12 medium-12 large-12 columns">
+					<% } %>
 				    	<div class="row content-details">
 					      	<h4><%= tutorialSteps.run.overview.heading %></h4>
 					        <% var sections = tutorialSteps.run.overview.sections %>
@@ -195,9 +212,21 @@
 						</div>
 						<% } %>	
 					</div>
+					<% if ((tutorialSteps.run.actions) || (tutorialSteps.run.exits) ) { %>
 					<div class="small-2 medium-2 large-2 columns">
-						<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp();" title="<%= tutorialSteps.run.cleanupDescription %>"><%= tutorialSteps.run.cleanupName %><img class="icon-image" src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/ibmdesign/back-right-previous_128-orange.png" /></a></h4>
+					<% for (var i in tutorialSteps.run.actions.details) { %>
+					<% var link = tutorialSteps.run.actions.details[i] %>
+					<h4 class="tkaction"><a href="javascript:;" onclick="<%= link.method %>;"> <%= link.name %> <img class="icon-image" src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathActionIcon %>" /></a></h4>
+				    <% } %>
+					<% if (tutorialSteps.run.exits) { %>
+					<hr />
+					<% for (var i in tutorialSteps.run.exits.details) { %>
+					<% var link = tutorialSteps.run.exits.details[i] %>
+					<h4 class="tkaction"><a href="javascript:;" onclick="<%= link.method %>;" title="<%= link.description %>"> <%= link.name %> <img class="icon-image" src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathExitIcon %>" /></a></h4>
+				    <% } %>
+					<% } %>
 				    </div>
+					<% } %>
 				</div>	
 			</div> <!-- tab-content -->
 		</div> <!-- columns -->
