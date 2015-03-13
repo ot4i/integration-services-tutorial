@@ -14,9 +14,7 @@
 	    <h4><%= tutorialCommon.name %></h4>
 	  </div>
 	  <div class="small-3 medium-3 large-3 columns">
-	  	<div class="row">
-			<a href="javascript:;" onclick="openHelpSystem('<%= tutorialCommon.helpLink.link %>');" class="small right helplink"><%= tutorialCommon.helpLink.text %></a> 
-		</div>
+		<a href="javascript:;" onclick="openHelpSystem('<%= tutorialCommon.helpLink.link %>');" class="small right helplink"><%= tutorialCommon.helpLink.text %></a> 
 	  </div>
 	</div> 
 	<hr />
@@ -24,8 +22,8 @@
 		<div class="small-10 medium-10 large-10 columns">
 		<h5> <%= tutorialCommon.shortDescription %> </h5>
 		</div>
-		<div class="small-2 medium-2 large-2 columns center-item">
-			<div class="small radius button" id="<%= content._common.buttonBackToGallery.idName %>" onclick="<%= content._common.buttonBackToGallery.method %>"> <%= content._common.buttonBackToGallery.name %>
+		<div class="small-2 medium-2 large-2 columns">
+			<div class="small radius button right" id="<%= content._common.buttonBackToGallery.idName %>" onclick="<%= content._common.buttonBackToGallery.method %>"> <%= content._common.buttonBackToGallery.name %>
 			</div>
 		</div>
 	</div>
