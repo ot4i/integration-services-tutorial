@@ -82,6 +82,39 @@
 					        <% var sections = tutorialSteps.create.overview.sections %>
 						    <% for (var i in sections) { %>
 								<p> <%- sections[i].section %> </p>
+								<% if (sections[i].steps) { %>
+								<% var steps = sections[i].steps %>
+									<% if (steps.type == "ordered") { %>
+									<ol>
+									<% } else { %>
+									<ul>
+									<% } %>
+									<% for (var j in steps.details) { %>
+										<li> <%- steps.details[j].details %>
+										<% if (steps.details[j].substeps) { %>
+										<% var substeps = steps.details[j].substeps %>
+											<% if (substeps.type == "ordered") { %>
+											<ol>
+											<% } else { %>
+											<ul>
+											<% } %>
+												<% for (var k in substeps.details) { %>
+													<li> <%- substeps.details[k].details %></li>
+												<% } %>
+											<% if (substeps.type == "ordered") { %>
+											</ol>
+											<% } else { %>
+											</ul>
+											<% } %>
+										<% } %>
+										</li>
+									<% } %>
+									<% if (steps.type == "ordered") { %>
+									</ol>
+									<% } else { %>
+									</ul>
+									<% } %>
+								<% } %>
 							<% } %>
 						</div>
 						<% if (tutorialSteps.create.helpLinks) { %>
@@ -120,6 +153,39 @@
 						    <% var sections = tutorialSteps.prepare.overview.sections %>
 						    <% for (var i in sections) { %>
 								<p> <%- sections[i].section %> </p>
+								<% if (sections[i].steps) { %>
+								<% var steps = sections[i].steps %>
+									<% if (steps.type == "ordered") { %>
+									<ol>
+									<% } else { %>
+									<ul>
+									<% } %>
+									<% for (var j in steps.details) { %>
+										<li> <%- steps.details[j].details %>
+										<% if (steps.details[j].substeps) { %>
+										<% var substeps = steps.details[j].substeps %>
+											<% if (substeps.type == "ordered") { %>
+											<ol>
+											<% } else { %>
+											<ul>
+											<% } %>
+												<% for (var k in substeps.details) { %>
+													<li> <%- substeps.details[k].details %></li>
+												<% } %>
+											<% if (substeps.type == "ordered") { %>
+											</ol>
+											<% } else { %>
+											</ul>
+											<% } %>
+										<% } %>
+										</li>
+									<% } %>
+									<% if (steps.type == "ordered") { %>
+									</ol>
+									<% } else { %>
+									</ul>
+									<% } %>
+								<% } %>
 							<% } %>
 						</div>
 						<% if (tutorialSteps.prepare.helpLinks) { %>
@@ -148,7 +214,7 @@
 					<% } %>
 		    	</div>
 		    	<div class="content" id="panel41">
-		    		<% if (tutorialSteps.run.actions) { %>
+		    		<% if ((tutorialSteps.run.actions) || (tutorialSteps.run.exits)) { %>
 		    		<div class="small-10 medium-10 large-10 columns divider">
 					<% } else { %>
 					<div class="small-12 medium-12 large-12 columns">
@@ -211,12 +277,16 @@
 					</div>
 					<% if ((tutorialSteps.run.actions) || (tutorialSteps.run.exits) ) { %>
 					<div class="small-2 medium-2 large-2 columns">
+					<% if (tutorialSteps.run.actions) { %>
 					<% for (var i in tutorialSteps.run.actions.details) { %>
 					<% var link = tutorialSteps.run.actions.details[i] %>
 					<h4 class="tkaction"><a href="javascript:;" onclick="<%= link.method %>;"> <%= link.name %> <img class="icon-image" src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathActionIcon %>" /></a></h4>
 				    <% } %>
-					<% if (tutorialSteps.run.exits) { %>
+					<% } %>
+					<% if ((tutorialSteps.run.actions) && (tutorialSteps.run.exits)) { %>
 					<hr />
+					<% } %>
+					<% if (tutorialSteps.run.exits) { %>
 					<% for (var i in tutorialSteps.run.exits.details) { %>
 					<% var link = tutorialSteps.run.exits.details[i] %>
 					<h4 class="tkaction"><a href="javascript:;" onclick="<%= link.method %>;" title="<%= link.description %>"> <%= link.name %> <img class="icon-image" src="<%= header.repoUrlProtocol %><%= header.repoUrlSite %><%= header.repoUrlFilepathExitIcon %>" /></a></h4>
