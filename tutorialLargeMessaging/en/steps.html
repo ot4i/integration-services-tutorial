@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-
 <html class="no-js" lang="en">
  
 	
@@ -9,6 +7,7 @@
 		<!-- Use Internet Explorer 9 Standards mode for Eclipse Browser Control - https://www.eclipse.org/swt/faq.php#browsernativeie and https://msdn.microsoft.com/en-us/library/jj676915%28v=vs.85%29.aspx -->
   		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 		
+		<!-- Next 2 http=equiv headers required to disable caching the Eclipse Browser Widget -->
 		<meta http-equiv="Pragma" content="no-cache">
   		<meta http-equiv="Expires" content="-1">
 
@@ -26,11 +25,12 @@
 		<title>IBM Integration Bus V10 Tutorial</title>
 
     	<link rel="stylesheet" href="http://ot4i.github.io/ot4i.tutorials/dist/css/main.css" />
+		<link rel="stylesheet" href="http://ot4i.github.io/ot4i.tutorials/dist/css/app.css" />
     	
-    	<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/json2.js"></script>
-    	<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/js2java.js"></script>
+		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/json2.js"></script>
+		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/js2java.js"></script>
 		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/js2java_steps.js"></script>
-  		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/vendor/modernizr.js"></script>
+		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/vendor/modernizr.js"></script>
 	</head>
 <!-- header::End -->
 <!-- body::Start -->
@@ -46,20 +46,19 @@
 	    <h4>Large messaging</h4>
 	  </div>
 	  <div class="small-3 medium-3 large-3 columns">
-	  	<div class="row">
-	    	<a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm')" class="small right helplink">IBM Knowledge Center</a> 
-		</div>
+		<a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm')" class="small right helplink">IBM Knowledge Center</a> 
 	  </div>
 	</div> 
 	<hr>
 	<div class="row">
-	  <div class="small-9 medium-10 large-10 columns">
-	    <h5> Split a large aggregate message into separate messages that can be processed individually by your system. </h5>
-	  </div>
+		<div class="small-10 medium-10 large-10 columns">
+		<h5> Split a large input message into individual records, using Java transformation code, in a memory-efficient manner. </h5>
+		</div>
+		<div class="small-2 medium-2 large-2 columns">
 			<div class="small radius button right" id="backToGallery" onclick="backToGallery()"> Back To Gallery
 			</div>
+		</div>
 	</div>
-
 	<div class="row">          
 		  <div class="small-12 medium-12 large-12 columns">
 			<ul class="tabs vertical"> 
@@ -84,7 +83,9 @@
 					      	<h4>Overview</h4>
 					        
 						    
-								<p> This tutorial uses a JavaCompute node to process a large input XML message that contains sales data, in the form of a list of SaleList child XML elements. The input message is split into 10 individual messages by creating a new message from each SaleList child element. In this tutorial, FileInput and FileOutput nodes are used to handle the input and output messages. </p>
+								<p> This tutorial demonstrates how to convert an input file that contains a single large XML document, and split it into multiple output files, one for each instance of a repeating element in that document. It uses Java transformation code and avoids fully parsing the entire input file, which minimizes the amount of memory that is consumed during processing. </p>
+							
+								<p> The solution uses a JavaCompute node to process a large input XML message that contains sales data, in the form of a list of SaleList child XML elements. The input message is split into 10 individual messages by creating a new message from each SaleList child element. In this tutorial, FileInput and FileOutput nodes are used to handle the input and output messages. </p>
 							
 								<p> You will import the LargeMessaging application to your Integration Toolkit workspace, deploy it to your default integration server, and create a test  message in an input directory that will be processed by the flow. You will record the path taken through the message flow by using the Flow Exerciser. </p>
 							
@@ -95,10 +96,14 @@
 							<ul>
 							
 								
+																
 								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac30300_.htm')" title="Knowledge Center link to Writing Java">Writing Java</a> </li>
+							   	
 							
 								
+																
 								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac55170_.htm')" title="Knowledge Center link to Working with files">Working with files</a> </li>
+							   	
 							
 							</ul>
 						</div>	
@@ -106,12 +111,15 @@
 					</div>
 				</div>
 		    	<div class="content" id="panel21">
+		    		
 		    		<div class="small-10 medium-10 large-10 columns divider">
+					
 				      	<div class="row content-details">
 					      	<h4>Import projects</h4>
 					        
 						    
-								<p> The Large Messaging tutorial includes one project that is imported into your workspace. </p>
+								<p> The Large messaging tutorial includes one project that is imported into your workspace, and the message flow is opened in the editor. </p>
+								
 							
 						</div>
 						
@@ -120,91 +128,58 @@
 							<ul>
 							
 								
+																
 								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac30300_.htm')" title="Knowledge Center link to Writing Java">Writing Java</a> </li>
+							   	
 							
 								
+																
 								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac55170_.htm')" title="Knowledge Center link to Working with files">Working with files</a> </li>
+							   	
 							
 							</ul>
 						</div>
 						
 					</div>
+					
 					<div class="small-2 medium-2 large-2 columns">
-					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('MainFlow')"> Import <img class="icon-image" src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>						
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('MainFlow')"> Import <img class="icon-image" src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+										
 				    </div>
+					
 		    	</div>
 		    	<div class="content" id="panel31">
-		    		<div class="small-10 medium-10 large-10 columns divider">
+					
+					<div class="small-12 medium-12 large-12 columns">
+					
 						<div class="row content-details">
-						  	<h4>Imported projects</h4>
+						  	<h4>Prepare your development environment</h4>
 						    
 						    
-								<p> The Large Messaging application has been imported into your workspace as LargeMessaging, and is shown in the Application Development view of your workspace. </p>
-							
-								<p>  </p>
-							
-								<p> The application will be deployed to your default integration server. The message flow is then running on your integration server and ready to process messages. </p>
-							
-						</div>
-						
-						<div class="row content-details">
-							<h4>Find out more</h4>
-							<ul>
-							
-								
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac30300_.htm')" title="Knowledge Center link to Writing Java">Writing Java</a> </li>
-							
-								
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac55170_.htm')" title="Knowledge Center link to Working with files">Working with files</a> </li>
-							
-							</ul>
-						</div>
-							
-					</div>
-					<div class="small-2 medium-2 large-2 columns">
-						<h4 class="tkaction"><a href="javascript:;" onclick="deployArtifacts()"> Deploy <img class="icon-image" src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
-				    </div>
-		    	</div>
-		    	<div class="content" id="panel41">
-		    		<div class="small-10 medium-10 large-10 columns divider">
-				    	<div class="row content-details">
-					      	<h4>Follow these steps to complete the tutorial</h4>
-					        
-						    
-								<p> The LargeMessaging application is shown in the Application Development view of your workspace, and the LargeMessages main message flow is shown in the message flow editor. </p>
+								<p> The Large messaging application has been imported into your workspace as LargeMessaging, and is shown in the Application Development view of your workspace. The main message flow opens in the message flow editor. </p>
 								
 							
-								<p> You will create an input directory on your file system, and copy an input message into it for the flow to process. </p>
+								<p> The FileInput node MessageWithRepeatingElements monitors an input directory on the file system for files to process. By default, this is set to <code>C:\temp_in</code>. </p>
 								
 								
 									
 									<ol>
 									
 									
-										<li> In the message flow editor, click the Flow Exerciser record icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/startFlowExerciser.png" alt=""> to start recording the message path through the flow. When the message is processed, you will see the path taken through the flow.
-										
-										</li>
-									
-										<li> The input node MessageWithRepeatingElements monitors an input directory on the file system. By default, this is set to <code>C:\temp_in</code>.
-										
-										</li>
-									
-										<li> Create an input directory on your file system that matches the directory that is monitored by the MessageWithRepeatingElements node.
+										<li> Create the input directory <code>C:\temp_in</code> on your file system.
 										
 										
 											
 											<ul>
 											
 												
-													<li> Optional: You can change the default input directory by selecting the MessageWithRepeatingElements FileInput node and setting the Input directory property in the Properties view.</li>
+													<li> If you are using Linux, first change the Input directory property of the MessageWithRepeatingElements node.</li>
 												
 											
 											</ul>
 											
-										
-										</li>
-									
-										<li> Copy the test XML message from <code>&lt;Integration Toolkit workspace&gt;/Large Messages/inputSalesList.xml</code> to the input directory.
 										
 										</li>
 									
@@ -213,13 +188,91 @@
 									
 								
 							
-								<p> The file is processed by the message flow and deleted. </p>
+								<p> In the message flow, the memory-efficient record splitting is performed by the JavaCompute node labelled ProduceMessageSlicesFromRepeatingElements. You can double-click this node to see the Java code that is run. </p>
 								
 							
-								<p> In the Integration Toolkit Flow Exerciser toolbar, click the View Path icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/viewPath.png" alt="View path"> to highlight the message path through the message flow. You can click on any highlighted connection to see the message data that passed through that connection. </p>
+						</div>
+						
+						<div class="row content-details">
+							<h4>Find out more</h4>
+							<ul>
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac30300_.htm')" title="Knowledge Center link to Writing Java">Writing Java</a> </li>
+							   	
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac55170_.htm')" title="Knowledge Center link to Working with files">Working with files</a> </li>
+							   	
+							
+							</ul>
+						</div>
+							
+					</div>
+					
+		    	</div>
+		    	<div class="content" id="panel41">
+		    		
+		    		<div class="small-10 medium-10 large-10 columns divider">
+					
+				    	<div class="row content-details">
+					      	<h4>Follow these steps to complete the tutorial</h4>
+					        
+						    
+								<p> The LargeMessaging application is shown in the Application Development view of your workspace, and the LargeMessages main message flow is shown in the message flow editor. </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> In the message flow editor, click the Flow Exerciser record icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/startFlowExerciser.png" alt=""> to start recording the message path through the flow.
+										
+										
+											
+											<ul>
+											
+												
+													<li> The application is deployed to your default integration server, and the message flow is then running on your integration server and ready to process messages.</li>
+												
+													<li> When the message is processed, you will see the path taken through the flow.</li>
+												
+											
+											</ul>
+											
+										
+										</li>
+									
+										<li> Copy the test XML message from <code>&lt;Integration Toolkit workspace&gt;/Large Messages/inputSalesList.xml</code> to the input directory that you created on your file system.
+										
+										
+											
+											<ul>
+											
+												
+													<li> The file is processed by the message flow and deleted.</li>
+												
+											
+											</ul>
+											
+										
+										</li>
+									
+										<li> In the Integration Toolkit Flow Exerciser toolbar, click the View Path icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/viewPath.png" alt="View path"> to highlight the message path through the message flow. You can click on any highlighted connection to see the message data that passed through that connection.
+										
+										</li>
+									
+									
+									</ol>
+									
 								
 							
 								<p> The input data has been split into 10 messages propagated to the Out terminal of the JavaCompute node named ProduceMessageSlicesFromRepeatingElement. You can double-click on the JavaCompute node to view the Java code that is executed to process the input message. </p>
+								
+							
+								<p> To stop recording the message path through the flow, click the Return flow to edit mode icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/stopFlowExerciser.png" alt="Return flow to edit mode">. </p>
 								
 							
 						</div>
@@ -229,21 +282,36 @@
 							<ul>
 							
 								
+																
 								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac30300_.htm')" title="Knowledge Center link to Writing Java">Writing Java</a> </li>
+							   	
 							
 								
+																
 								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac55170_.htm')" title="Knowledge Center link to Working with files">Working with files</a> </li>
+							   	
 							
 								
+																
 								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/rt26110_.htm')" title="Knowledge Center link to Testing your message flow by using the Flow exerciser">Testing your message flow by using the Flow exerciser</a> </li>
+							   	
 							
 							</ul>
 						</div>
 							
 					</div>
+					
 					<div class="small-2 medium-2 large-2 columns">
-						<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp()" title="Clean up and remove any changes made by the tutorial.">Clean up<img class="icon-image" src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+					
+					
+					
+					
+					
+					<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp()" title="Clean up and remove any changes in your workspace made by the tutorial."> Clean Up <img class="icon-image" src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/ibmdesign/close-cancel-error_128-red.png"></a></h4>
+				    
+					
 				    </div>
+					
 				</div>	
 			</div> <!-- tab-content -->
 		</div> <!-- columns -->
