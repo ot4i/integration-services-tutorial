@@ -1,0 +1,381 @@
+{
+  "version":"0.4",
+  "description":"Tutorial Content for Tutorial Framework.",
+  "header":
+  {
+    "lang":"en-us",
+    "charset":"UTF-8",
+    "metaDescription":"IBM Integration Bus Tutorial",
+    "metaAuthor":"IBM",
+    "keywords":"keywords",
+    "robots":"index,follow",
+    "source":"IBM Integration Bus Tutorial"
+  },
+  "pageContent": 
+  {
+    "comments":"Must use underscore for en-us.",
+      "navItems":
+      {
+        "_common":
+        {
+                "buttonBackToGallery": 
+				{
+                    "name": "Back To Gallery",
+					"method": "backToGallery()",
+					"idName": "backToGallery"	
+                },
+                "buttonStartTutorial": 
+				{
+                    "name": "Start Tutorial",
+					"method": "startTutorialFromDetailsScreen()",
+					"idName": "startTutorial"
+                }
+        },
+        "pageDetails":
+        {
+          "pageTitle":"Tutorial Overview",
+          "headlineMain":"IBM Integration Bus",
+          "headlineSub":"Show Me",
+          "section1":"Here you can explore and learn about IBM Integration Bus using tutorials.",
+          "section2":"What are you interested in?",
+          "dropdownSize":10,
+          "allTimeFavs":"ALL-TIME FAVORITES",
+          "tab1":
+          {
+            "text":"Tool Capabilities"
+          },
+          "tab2":
+          {
+            "text":"Scenarios"
+          }
+        },
+        "pageSteps":
+        {
+          "pageTitle":"Tutorial Steps",
+          "headlineMain":"IBM Integration Bus V10",
+          "headlineSub":"Show Me",
+          "section1":"Here you can explore and learn about IBM Integration Bus using tutorials.",
+          "section2":"What are you interested in?",
+          "dropdownSize":10,
+          "allTimeFavs":"ALL-TIME FAVORITES",
+          "tab1":
+          {
+            "text":"Tool Capabilities"
+          },
+          "tab2":
+          {
+            "text":"Scenarios"
+          }
+        }  
+      }
+  },
+  "tutorial": 
+  { "_common":
+    {
+      "name":"Integration services (SOAP/HTTP inputs)",
+      "shortDescription":"Learn about integration services that use SOAP/HTTP inputs in IBM Integration Bus by exploring this simple example.",
+      "_comment_category":"Categories are either 'tool' or 'scenario'",
+      "category":"tool",
+      "isPattern" : "false",
+      "isFavorite"  : "true",
+      "durationText":"This tutorial takes approximately",
+      "durationTime":"5 minutes",
+	  "resourceToOpen":"MainService",
+            "helpLink": 
+			{
+                "text": "IBM Knowledge Center",
+                "link": "/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm"
+            }
+    },
+    "pageDetails":
+    {
+      "topicsName":"Tutorial Topics",
+      "topicList":
+      [
+        {
+          "title":"Integration services",
+          "description":"Integration services"
+        },
+        {
+          "title":"SOAP/HTTP web services",
+          "description":"SOAP/HTTP web service"
+        },
+        {
+          "title":"Transformation using graphical data mapping",
+          "description":"Transformation using graphical data mapping"
+        }
+      ],
+      "outcomesName":"Learning outcomes",
+      "outcomeList":
+      [
+        {
+          "title":"Use IBM Integration Bus to create and invoke a SOAP/HTTP request-response web service.",
+          "description":"Use IBM Integration Bus to create and invoke a SOAP/HTTP request-response web service."
+        }
+      ],
+      "summary":
+        {
+          "comments":"",
+          "overviewName":"OVERVIEW",
+          "sections":
+          [
+            {
+            "section":"This tutorial demonstrates a simple integration service with a SOAP/HTTP binding. The integration service converts temperatures from Celsius to Fahrenheit, or from Fahrenheit to Celsius, by using request-response operations."
+            },
+            {
+            "section":"In IBM Integration Bus, an integration service is a specialized application with a defined interface that acts as a container for a web services solution. The service interface is specified in a WSDL document that contains the operation and fault definitions. Each service operation and error handler is implemented as a subflow in the integration service."
+            }
+          ]
+        }
+      },
+      "pageSteps":
+      {
+        "concept":
+        {
+          "overview":
+          {
+            "comments":"",
+            "name":"Overview",
+            "heading":"Overview",
+            "sections":
+            [
+              {
+              "section":"This tutorial demonstrates a simple integration service with a SOAP/HTTP binding. The integration service converts temperatures from Celsius to Fahrenheit, or from Fahrenheit to Celsius, by using request-response operations"
+              },
+              {
+              "section":"You will import the integration service to your Integration Toolkit workspace, deploy it to your default integration server, and invoke the integration service by using the Flow exerciser."
+              }
+            ]
+          },
+          "productComponentsUsed":
+          {
+            "comments":"",
+            "sections":
+            [
+              {
+              "section":"Integration service"
+              }
+            ]
+          },
+          "description":
+          {
+            "comment":"",
+            "sections":
+            [
+              {
+                "section":"Developing integration solutions by using integration services."
+              }
+            ]
+          },
+		  "helpLinks": 
+			{
+			"title": "Find out more",
+			"details" :
+			  [
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Developing integration solutions by using integration services",
+				"link":"com.ibm.etools.mft.doc/bi12004_.htm"
+				}
+			  ]
+		    }
+        },
+        "create":
+        {
+          "overview":
+          {
+            "comment":"",
+            "name":"Create",
+            "heading":"Import projects",
+            "sections":
+            [
+              {
+                "section":"The TemperatureConverter integration service includes one project that is imported into your workspace."
+              }
+            ]
+          },
+          "description":
+          {
+            "comment":"",
+            "sections":
+            [
+              {
+                "section":"Developing integration solutions by using integration services."
+              },
+              {
+                "section":"The TemperatureConverter integration service is shown in the Application Development view of your workspace. You can explore the Integration Service Description and other resources of the integration service before deploying the service to an integration node in order to start the service."
+              }
+            ]
+          },
+          "helpLinks": 
+			{
+			"title": "Find out more",
+			"details" :
+			  [
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Developing integration solutions by using integration services",
+				"link":"com.ibm.etools.mft.doc/bi12004_.htm"
+				}
+			  ]
+		    },
+                "actions": 
+				{
+                    "title": "Create Actions",
+                    "details": 
+					[
+                        {
+                            "name": "Import",
+                            "method": "importArtifacts()"
+                        }
+                    ]
+                }
+        },
+        "prepare":
+        {
+          "overview":
+          {
+            "comment":"",
+            "name":"Prepare",
+            "heading":"Imported projects",
+            "sections":
+            [
+              {
+                "section":"The TemperatureConverter integration service has been imported into your workspace as TemperatureConverter, and is shown in the Application Development view of your workspace."
+              }, 
+              {
+                "section":""
+              },
+              {
+                "section":"The integration service will be deployed to your default integration server. The service is then started and ready to be invoked."
+              }
+            ]
+          },
+          "description":
+          {
+            "comment":"",
+            "name":"Deploy details",
+            "heading":"",
+            "sections":
+            [
+              {
+                "section":"The TemperatureConverter integration service will be deployed to your default integration server."
+              },
+              {
+                "section":"The service is then started and ready to be invoked."
+              }
+            ]
+          },
+          "helpLinks": 
+			{
+			"title": "Find out more",
+			"details" :
+			  [
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Developing integration solutions by using integration services",
+				"link":"com.ibm.etools.mft.doc/bi12004_.htm"
+				}
+			  ]
+		    },
+			"actions-removed": 
+				{
+                    "title": "Prepare Actions",
+                    "details": 
+					[
+                        {
+                            "name": "Deploy",
+                            "method": "deployArtifacts()"
+                        }
+                    ]
+                }
+        },
+        "run":
+        {
+          "cleanupName":"Clean up", 
+          "cleanupDescription":"Clean up and remove any changes made by the tutorial.", 
+          "overview":
+          {
+            "comments":"",
+            "name":"Run",
+            "heading":"Follow these steps to complete the tutorial",
+            "sections":
+            [
+              {
+              "section":"The Temperature Converter integration service is shown in the Application Development view of your workspace.", 
+                "steps":
+                {
+                "type":"ordered",
+                "details":
+                  [
+                    { 
+                      "name":"",
+                      "details":"Open the Integration Service Description of the TemperatureConverter service, and click the Start Flow exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/startFlowExerciser.png' alt='' /> to start recording the message path through the integration service."
+                    },
+                    { 
+                      "name":"",
+                      "details":"Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' /> and create a new input message."
+                    },
+					{ 
+                      "name":"",
+                      "details":"Choose the CtoF SOAP operation, edit the message data if you like, and click Send. Your request message is sent to the integration service SOAP input."
+                    }
+                  ]
+                }
+              },
+			  {
+              "section":"After the request message is processed by the integration service, the message path is automatically highlighted on the service description diagram.",
+			  "steps":
+                {
+                "type":"unordered",
+                "details":
+                  [
+                    { 
+                      "name":"",
+                      "details":"Click on the highlighted operation to see the message path through the operation subflow."
+                    },
+                    { 
+                      "name":"",
+                      "details":"You can click on any connection to see the data that passed through that connection. You can see that the request (input) message data shows the temperature in Celsius in the TemperatureInC XML element, and the response (output) message has converted this to a TemperatureInF XML element."
+                    }
+                  ]
+                }
+              },
+			  {
+			  "section":"To stop recording the message path through the flow, click the Return flow to edit mode icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/stopFlowExerciser.png' alt='Return flow to edit mode' />."
+			  }
+            ]
+          },
+		  "helpLinks": 
+			{
+			"title": "Find out more",
+			"details" :
+			  [
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Developing integration solutions by using integration services",
+				"link":"com.ibm.etools.mft.doc/bi12004_.htm"
+				},
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Testing your message flow by using the Flow exerciser",
+				"link":"com.ibm.etools.mft.doc/rt26110_.htm"
+				}
+			  ]
+		    },
+				"exits": 
+				{
+					"title": "Run Exits",
+					"details": 
+					[
+						{
+							"name": "Clean Up",
+							"description": "Clean up and remove any changes in your workspace made by the tutorial.",
+							"method": "cleanUp()"
+						}
+					]
+				}
+        } 
+      }
+    }
+  }
