@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://TemperatureConverter" xmlns:tns="http://TemperatureConverter" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="CtoF">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="TemperatureInC" nillable="true" type="xsd:decimal"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="CtoFResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="TemperatureInF" nillable="true" type="xsd:decimal"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="FtoC">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="TemperatureInF" nillable="true" type="xsd:decimal"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="FtoCResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="TemperatureInC" nillable="true" type="xsd:decimal"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
