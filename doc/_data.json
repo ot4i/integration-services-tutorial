@@ -310,11 +310,11 @@
                   [
                     { 
                       "name":"",
-                      "details":"Open the Integration Service Description of the TemperatureConverter service, and click the Start Flow exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/startFlowExerciser.png' alt='' /> to start recording the message path through the integration service."
+                      "details":"Open the Integration Service Description of the TemperatureConverter service, and click the Start Flow exerciser icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/startFlowExerciser.png' alt='' /> to start recording the message path through the integration service."
                     },
                     { 
                       "name":"",
-                      "details":"Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' /> and create a new input message."
+                      "details":"Click the Send Message icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/sendMessage.png' alt='' /> and create a new input message."
                     },
 					{ 
                       "name":"",
@@ -342,7 +342,7 @@
                 }
               },
 			  {
-			  "section":"To stop recording the message path through the flow, click the Return flow to edit mode icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/stopFlowExerciser.png' alt='Return flow to edit mode' />."
+			  "section":"To stop recording the message path through the flow, click the Return flow to edit mode icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/stopFlowExerciser.png' alt='Return flow to edit mode' />."
 			  }
             ]
           },
