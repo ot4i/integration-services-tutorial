@@ -24,13 +24,13 @@
 		
 		<title>IBM Integration Bus V10 Tutorial</title>
 
-    	<link rel="stylesheet" href="http://ot4i.github.io/ot4i.tutorials/dist/css/main.css" />
-		<link rel="stylesheet" href="http://ot4i.github.io/ot4i.tutorials/dist/css/app.css" />
+    	<link rel="stylesheet" href="http://ot4i.github.io/iib-tutorials/css/main.css" />
+		<link rel="stylesheet" href="http://ot4i.github.io/iib-tutorials/css/app.css" />
     	
-		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/json2.js"></script>
-		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/js2java.js"></script>
-		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/js2java_steps.js"></script>
-		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/vendor/modernizr.js"></script>
+		<script src="http://ot4i.github.io/iib-tutorials/js/json2.js"></script>
+		<script src="http://ot4i.github.io/iib-tutorials/js/js2java.js"></script>
+		<script src="http://ot4i.github.io/iib-tutorials/js/js2java_steps.js"></script>
+		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
 	</head>
 <!-- header::End -->
 <!-- body::Start -->
@@ -62,10 +62,10 @@
 	<div class="row">          
 		  <div class="small-12 medium-12 large-12 columns">
 			<ul class="tabs vertical"> 
-				<li class="tab-title tab-title-small active"> 
-				  <a href="javascript:;" onclick="show('panel11')">Overview</a>
-				</li>
-				<li class="tab-title tab-title-small">
+				<!--li class="tab-title tab-title-small active"> 
+				  <a href="javascript:;" onclick="show('panel11');">Overview</a>
+				</li-->
+				<li class="tab-title tab-title-small active">
 				  <a href="javascript:;" onclick="show('panel21')">Create</a> 
 				</li>
 				<li class="tab-title tab-title-small">
@@ -77,7 +77,7 @@
 			</ul>
 			<!-- editing -->
 			<div class="tabs-content panel-thin-blue vertical"> 
-			    <div class="content active" id="panel11">
+			    <!--div class="content active" id="panel11">
 			    	<div class="small-12 medium-12 large-12 columns">
 				    	<div class="row content-details">
 					      	<h4>Overview</h4>
@@ -102,8 +102,8 @@
 						</div>	
 							
 					</div>
-				</div>
-		    	<div class="content" id="panel21">
+				</div-->
+		    	<div class="content active" id="panel21">
 		    		
 		    		<div class="small-10 medium-10 large-10 columns divider">
 					
@@ -133,7 +133,7 @@
 					<div class="small-2 medium-2 large-2 columns">
 					
 					
-					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('MainService')"> Import <img class="icon-image" src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
+					<h4 class="tkaction"><a href="javascript:;" onclick="importArtifacts(); openResource('MainService')"> Import <img class="icon-image" src="http://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/back-right-previous_128-orange.png"></a></h4>
 										
 				    </div>
 					
@@ -146,13 +146,7 @@
 						  	<h4>Imported projects</h4>
 						    
 						    
-								<p> The TemperatureConverter integration service has been imported into your workspace as TemperatureConverter, and is shown in the Application Development view of your workspace. </p>
-								
-							
-								<p>  </p>
-								
-							
-								<p> The integration service will be deployed to your default integration server. The service is then started and ready to be invoked. </p>
+								<p> The TemperatureConverter integration service has been imported into your workspace as TemperatureConverter, and is shown in the Application Development view of your workspace. The integration service description is open in the editor. </p>
 								
 							
 						</div>
@@ -187,11 +181,11 @@
 									<ol>
 									
 									
-										<li> Open the Integration Service Description of the TemperatureConverter service, and click the Start Flow exerciser icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/startFlowExerciser.png" alt=""> to start recording the message path through the integration service.
+										<li> Open the Integration Service Description of the TemperatureConverter service, and click the Start Flow exerciser icon <img src="http://ot4i.github.io/iib-tutorials/images/icons/iib/startFlowExerciser.png" alt=""> to start recording the message path through the integration service.
 										
 										</li>
 									
-										<li> Click the Send Message icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png" alt=""> and create a new input message.
+										<li> Click the Send Message icon <img src="http://ot4i.github.io/iib-tutorials/images/icons/iib/sendMessage.png" alt=""> and create a new input message.
 										
 										</li>
 									
@@ -224,7 +218,7 @@
 									
 								
 							
-								<p> To stop recording the message path through the flow, click the Return flow to edit mode icon <img src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/stopFlowExerciser.png" alt="Return flow to edit mode">. </p>
+								<p> To stop recording the message path through the flow, click the Return flow to edit mode icon <img src="http://ot4i.github.io/iib-tutorials/images/icons/iib/stopFlowExerciser.png" alt="Return flow to edit mode">. </p>
 								
 							
 						</div>
@@ -254,7 +248,7 @@
 					
 					
 					
-					<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp()" title="Clean up and remove any changes in your workspace made by the tutorial."> Clean Up <img class="icon-image" src="http://ot4i.github.io/ot4i.tutorials/dist/images/icons/ibmdesign/close-cancel-error_128-red.png"></a></h4>
+					<h4 class="tkaction"><a href="javascript:;" onclick="cleanUp()" title="Clean up and remove any changes in your workspace made by the tutorial."> Clean Up <img class="icon-image" src="http://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/close-cancel-error_128-red.png"></a></h4>
 				    
 					
 				    </div>
@@ -263,9 +257,9 @@
 			</div> <!-- tab-content -->
 		</div> <!-- columns -->
 	  </div> <!-- row --></body>
-		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/vendor/jquery.js"></script>
-		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/vendor/foundation.min.js"></script>
-		<script src="http://ot4i.github.io/ot4i.tutorials/dist/js/main.js"></script>
+		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/jquery.js"></script>
+		<script src="http://ot4i.github.io/iib-tutorials/js/vendor/foundation.min.js"></script>
+		<script src="http://ot4i.github.io/iib-tutorials/js/main.js"></script>
 	</body>
 <!-- body::End -->
 
