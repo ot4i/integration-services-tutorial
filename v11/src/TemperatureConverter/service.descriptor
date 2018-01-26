@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service:services xmlns:service="http://com.ibm.etools.mft.service">
+  <service:service implementation="gen/TemperatureConverter.msgflow" name="TemperatureConverter" portType="TemperatureConverter" wsdlFileName="TemperatureConverter.wsdl">
+    <service:operations>
+      <service:operation name="CtoF" type="request-response">
+        <service:flows>
+          <service:flow location="gen/CtoF_Request_Response.subflow" type="Request_Response"/>
+        </service:flows>
+      </service:operation>
+      <service:operation name="FtoC" type="request-response">
+        <service:flows>
+          <service:flow location="gen/FtoC_Request_Response.subflow" type="Request_Response"/>
+        </service:flows>
+      </service:operation>
+    </service:operations>
+    <service:errors>
+      <service:flows>
+        <service:flow location="gen/TemperatureConverterInputHTTPTimeoutHandler.subflow" type="Timeout"/>
+        <service:flow location="gen/TemperatureConverterInputFailureHandler.subflow" type="Failure"/>
+        <service:flow location="gen/TemperatureConverterInputCatchHandler.subflow" type="Catch"/>
+      </service:flows>
+    </service:errors>
+  </service:service>
+</service:services>

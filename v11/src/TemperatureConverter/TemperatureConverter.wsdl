@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions name="TemperatureConverter" targetNamespace="http://TemperatureConverter" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://TemperatureConverter" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="TemperatureConverterHttpBinding" originalBindingStyle="document"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  
+  
+  
+  <wsdl:types>
+    
+        <xsd:schema targetNamespace="http://TemperatureConverter" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+      <xsd:include schemaLocation="TemperatureConverter_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="CtoFRequestMsg">
+    <wsdl:part element="tns:CtoF" name="CtoFParameters"/>
+  </wsdl:message>
+  <wsdl:message name="CtoFResponseMsg">
+    <wsdl:part element="tns:CtoFResponse" name="CtoFResult"/>
+  </wsdl:message>
+    <wsdl:message name="FtoCRequestMsg">
+    <wsdl:part element="tns:FtoC" name="FtoCParameters"/>
+  </wsdl:message>
+    <wsdl:message name="FtoCResponseMsg">
+    <wsdl:part element="tns:FtoCResponse" name="FtoCResult"/>
+  </wsdl:message>
+    <wsdl:portType name="TemperatureConverter">
+    <wsdl:operation name="CtoF">
+      <wsdl:input message="tns:CtoFRequestMsg" name="CtoFRequest"/>
+      <wsdl:output message="tns:CtoFResponseMsg" name="CtoFResponse"/>
+    </wsdl:operation>
+        <wsdl:operation name="FtoC">
+      <wsdl:input message="tns:FtoCRequestMsg" name="FtoCRequest"/>
+      <wsdl:output message="tns:FtoCResponseMsg" name="FtoCResponse"/>
+    </wsdl:operation>
+    </wsdl:portType>
+  <wsdl:binding name="TemperatureConverterHttpBinding" type="tns:TemperatureConverter">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="CtoF">
+      <soap:operation soapAction="http://TemperatureConverter/CtoF"/>
+      <wsdl:input name="CtoFRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CtoFResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+        <wsdl:operation name="FtoC">
+      <soap:operation soapAction="http://TemperatureConverter/FtoC"/>
+      <wsdl:input name="FtoCRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="FtoCResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    </wsdl:binding>
+  <wsdl:service name="TemperatureConverterHttpService">
+    <wsdl:port binding="tns:TemperatureConverterHttpBinding" name="TemperatureConverterHttpPort">
+      <soap:address location="http://localhost:7800/TemperatureConverter/TemperatureConverter"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

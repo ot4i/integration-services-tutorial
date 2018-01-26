@@ -1,0 +1,293 @@
+{
+  "version":"0.6",
+  "pageContent": 
+  {
+    "comments":"Must use underscore for en-us.",
+      "navItems":
+      {
+        "_common":
+        {
+                "buttonBackToGallery": 
+				{
+                    "name": "Back To Gallery",
+					"method": "backToGallery()",
+					"idName": "backToGallery"	
+                },
+                "buttonStartTutorial": 
+				{
+                    "name": "Start Tutorial",
+					"method": "startTutorialFromDetailsScreen()",
+					"idName": "startTutorial"
+                },
+				"buttonViewDetails": 
+				{
+                    "name": "View Details",
+					"method": "viewDetails()",
+					"idName": "stepsViewDetails"	
+                }
+        }
+	  }
+  },
+  "tutorial": 
+  { "_common":
+    {
+      "name":"Integration services (SOAP/HTTP inputs)",
+      "shortDescription":"See an example of SOAP/HTTP web service interfaces hosted in IBM Integration Bus using integration service projects.",
+      "durationText":"This tutorial takes approximately",
+      "durationTime":"5 minutes",
+	  "resourceToOpen":"MainService",
+            "helpLink": 
+			{
+                "text": "IBM Knowledge Center",
+                "link": "/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm"
+            }
+    },
+    "pageDetails":
+    {
+      "topicsName":"Tutorial Topics",
+      "topicList":
+      [
+        {
+          "title":"Integration services"
+        },
+        {
+          "title":"SOAP/HTTP web services"
+        },
+        {
+          "title":"Transformation using graphical data mapping"
+        }
+      ],
+      "outcomesName":"Learning outcomes",
+      "outcomeList":
+      [
+        {
+          "title":"Understand how a SOAP/HTTP web service interface is defined via an integration service."
+        },
+        {
+          "title":"Learn how to implement web service operations in an integration service."
+        },
+        {
+          "title":"Learn how a web service request is represented in IBM Integration Bus, for transformation or routing to another system."
+        }
+      ],
+      "summary":
+        {
+          "comments":"",
+          "overviewName":"OVERVIEW",
+          "sections":
+          [
+            {
+            "section":"IBM Integration Bus provides a specific project type, an integration service, for developing web service implementations. These help you define and implement a web service interface which can be called from other standard clients, and where the interface is defined by WSDL. This tutorial shows a simple example where a web service operation implements a transformation between temperature formats."},
+            {
+            "section":"The integration service editor separates the tasks of defining an interface from implementing that interface. In this example, the interface defines two operations, both of which have numeric inputs and outputs representing temperature in different scales. The interface is stored as a standard WSDL document, and an editor is provided to show and help you build or change that interface. Each operation is implemented as a subflow, using the built-in Mapping nodes to transform the incoming requests. Error handling is also demonstrated."},
+            {
+            "section":"You will run the integration service project using the built-in Flow Exerciser. This will show you how the incoming web service request is passed into the operation subflows that you implement. As you run it, you will also see how the integration service is deployed as a single entity, which packages up your web service solution. The WSDL document describing the interface can be retrieved from the service both during development and also after it has been deployed."
+            }
+          ]
+        },
+	  "helpLinks": 
+		{
+		"title": "Find out more",
+		"details" :
+		  [
+			{
+			"title":"Knowledge Center link to ",
+			"description":"Developing integration solutions by using integration services",
+			"link":"com.ibm.etools.mft.doc/bi12004_.htm"
+			},
+                        {
+			"title":"Knowledge Center link to ",
+			"description":"Transforming a SOAP message in a message map",
+			"link":"com.ibm.etools.mft.doc/br30017_.htm"
+			}
+
+		  ]
+		}
+      },
+      "pageSteps":
+      {
+        "create":
+        {
+          "overview":
+          {
+            "name":"Create",
+            "heading":"Import projects",
+            "sections":
+            [
+              {
+                "section":"On clicking Import, an integration service project called TemperatureConverter will be added to your workspace, and the integration service editor will be opened to show you its contents. Next, click Prepare for an explanation of the different parts of the integration service editor."
+              }
+            ]
+          },
+          "helpLinks": 
+			{
+			"title": "Find out more",
+			"details" :
+			  [
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Developing integration solutions by using integration services",
+				"link":"com.ibm.etools.mft.doc/bi12004_.htm"
+				}
+			  ]
+		    },
+                "actions": 
+				{
+                    "title": "Create Actions",
+                    "details": 
+					[
+                        {
+                            "name": "Import",
+                            "method": "importArtifacts()"
+                        }
+                    ]
+                }
+        },
+        "prepare":
+        {
+          "overview":
+          {
+            "comment":"",
+            "name":"Prepare",
+            "heading":"Imported projects",
+            "sections":
+            [
+              {
+                "section":"In the main pane you will see the integration service editor, which you can reopen by clicking on the integration service Description inside the TemperatureConverter project. The editor has two tabs, one called Service and another called Interface."
+              }, 
+              {
+                "section":"If you click on Interface, you will see the two web service operations which have been defined, along with their input and output types. These are called CtoF and FtoC."
+              },
+              {
+                "section":"If you click back on Service, you will see a link for each operation name defined in the Interface tab, along with another 3 links for error handling (named Timeout, Fault and Catch). Click on each of CtoF and FtoC to see the subflow which implements that operation. There is a Mapping node in each one which performs a transformation on the input data, to convert between Celsius and Fahrenheit temperatures. Double-click the Mapping node to see that transformation, and note that the input and output types for the mapping match what was already defined in the integration service's Interface editor. Click also on the Fault and Catch handlers, which are implemented with another Mapping node in this example to return an error to the external web service client."
+              },
+              {
+                "section":"Finally, click on the SOAP/HTTP Binding link and look at the Properties pane; this will show you properties which apply to all operations, such as the URL prefix and whether https is enabled."
+              },
+              {
+                "section":"Next, you will use the Flow exerciser to invoke and send a SOAP request to the integration service. Note the icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/startFlowExerciser.png' alt='Start Flow exerciser' /> in the top-right corner of the editor which you will use in the Run stage."
+              }
+            ]
+          },
+          "helpLinks": 
+			{
+			"title": "Find out more",
+			"details" :
+			  [
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Developing integration solutions by using integration services",
+				"link":"com.ibm.etools.mft.doc/bi12004_.htm"
+				}
+			  ]
+		    },
+			"actions-removed": 
+				{
+                    "title": "Prepare Actions",
+                    "details": 
+					[
+                        {
+                            "name": "Deploy",
+                            "method": "deployArtifacts()"
+                        }
+                    ]
+                }
+        },
+        "run":
+        {
+          "overview":
+          {
+            "name":"Run",
+            "heading":"Follow these steps to see how the Integration Service runs",
+            "sections":
+            [
+              {
+              "section":"The TemperatureConverter integration service is shown in the Application Development view of your workspace.", 
+                "steps":
+                {
+                "type":"ordered",
+                "details":
+                  [
+                    { 
+                      "details":"Open the integration service Description of the TemperatureConverter service, and click the Start Flow exerciser icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/startFlowExerciser.png' alt='' /> to start recording the message path through the integration service. Note that this will deploy the integration service to your TESTNODE integration node."
+                    },
+                    { 
+                      "details":"Click the Send Message icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/sendMessage.png' alt='' /> and create a new input message."
+                    },
+					{ 
+                      "details":"Choose the CtoF SOAP operation, edit the message data if you like, and click Send. Your request message is sent to the integration service SOAP input."
+                    },
+                    {
+                      "details":"Look at the SOAP input and output data shown in the pop-up window."
+                    }
+                  ]
+                }
+              },
+			  {
+              "section":"After you close the Send Message dialog, the message path is highlighted in green on the service description diagram.",
+			  "steps":
+                {
+                "type":"unordered",
+                "details":
+                  [
+                    { 
+                      "details":"Click on the highlighted line between the SOAP/HTTP Binding and the operation to see the original input, before it is sent to the operation subflow for processing."
+                    },
+                    { 
+                      "details":"Click on the highlighted CtoF operation to expand the message path through the operation subflow."
+                    },
+                    { 
+                      "details":"Click on any connection to see the data that passed through that connection. Note the data before and after the Mapping node: the TemperatureInC XML element has changed to a TemperatureInF XML element."
+                    }
+                  ]
+                }
+              },
+              {
+                "section":"Look in the Integration Nodes view and find your test integration node (called TESTNODE_yourusername). Expand the tree to show the integration servers, then the TemperatureConverter integration service. Click on the Integration Service and see its properties, including the Service URL and Service Query URL. This shows the actual URL where an external client would need to send requests to invoke your service."
+              },
+              {
+                "section":"Experiment with the operational view of your integration service in the Web administration view. Right-click on your Integration Node (TESTNODE_yourusername) and select Start Web User Interface to open in your browser. Expand the tree as you did earlier, to show your integration server, then its integration services. Click on your integration service and note that the same URLs are shown in the browser as you just saw in your Integration Toolkit."
+              },
+			  {
+			  "section":"To stop recording the message path through the flow, click the Return flow to edit mode icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/stopFlowExerciser.png' alt='Return flow to edit mode' />."
+			  }
+            ]
+          },
+		  "helpLinks": 
+			{
+			"title": "Find out more",
+			"details" :
+			  [
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Developing integration solutions by using integration services",
+				"link":"com.ibm.etools.mft.doc/bi12004_.htm"
+				},
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Testing your message flow by using the Flow exerciser",
+				"link":"com.ibm.etools.mft.doc/rt26110_.htm"
+				},
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Downloading integration service interface files using the web user interface",
+				"link":"com.ibm.etools.mft.doc/bc10541_.htm"
+				}
+			  ]
+		    },
+				"exits": 
+				{
+					"title": "Run Exits",
+					"details": 
+					[
+						{
+							"name": "Clean Up",
+							"description": "Clean up and remove any changes in your workspace made by the tutorial.",
+							"method": "cleanUp()"
+						}
+					]
+				}
+        } 
+      }
+    }
+  }
