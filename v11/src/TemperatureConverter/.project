@@ -76,6 +76,21 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+			<name>com.ibm.etools.mft.json.builder.JSONBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.ibm.etools.mft.restapi.ui.restApiDefinitionsBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.ibm.etools.mft.policy.ui.policybuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
 			<name>com.ibm.etools.msg.validation.dfdl.dfdlqnamevalidator</name>
 			<arguments>
 			</arguments>
@@ -100,5 +115,6 @@
 		<nature>com.ibm.etools.msgbroker.tooling.serviceApplicationNature</nature>
 		<nature>com.ibm.etools.msgbroker.tooling.messageBrokerProjectNature</nature>
 		<nature>com.ibm.etools.msgbroker.tooling.applicationNature</nature>
+		<nature>com.ibm.etools.mft.bar.ext.barnature</nature>
 	</natures>
 </projectDescription>
