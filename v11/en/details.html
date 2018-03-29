@@ -52,7 +52,7 @@
   <hr>
   <div class="row">
     <div class="small-12 medium-12 large-12 columns">
-      <h5> Learn about integration services that use SOAP/HTTP inputs in IBM Integration Bus by exploring this simple example. </h5>
+      <h5> Learn about integration services that use SOAP/HTTP inputs </h5>
     </div>
   </div>
   <div class="row content-details">
@@ -63,26 +63,32 @@
       <div class="row">
       
         
-        <p> This tutorial demonstrates a simple integration service with a SOAP/HTTP binding. The integration service converts temperatures from Celsius to Fahrenheit, or from Fahrenheit to Celsius, by using request-response operations. </p>
+        <p> App Connect Enterprise provides a specific project type, an integration service, for developing web service implementations. These help you define and implement a web service interface which can be called from other standard clients, and where the interface is defined by WSDL. This tutorial shows a simple example where a web service operation implements a transformation between temperature formats. </p>
       
-        <p> In IBM Integration Bus, an integration service is a specialized application with a defined interface that acts as a container for a web services solution. The service interface is specified in a WSDL document that contains the operation and fault definitions. Each service operation and error handler is implemented as a subflow in the integration service. </p>
-      
-        <p> You will import the integration service to your Integration Toolkit workspace, and invoke the integration service to send a SOAP request by using the Flow exerciser. </p>
+        <p> The integration service editor separates the tasks of defining an interface from implementing that interface. In this example, the interface defines two operations, both of which have numeric inputs and outputs representing temperature in different scales. The interface is stored as a standard WSDL document. An editor is provided to show the interface, and help you build or change it. Each operation is implemented as a subflow, using the built-in Mapping nodes to transform the incoming requests. </p>
       
       </div>	  
-		
+		<!-- help links do not work in details page for GA 
+        
 		<div class="row content-details">
 			<h4>Find out more</h4>
 			<ul>
 			
 				
 												
-				<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12004_.htm')" title="Knowledge Center link to Developing integration solutions by using integration services">Developing integration solutions by using integration services</a> </li>
+				<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12004_.htm');" title="Knowledge Center link to Developing integration solutions by using integration services">Developing integration solutions by using integration services</a> </li>
+			   	
+			
+				
+												
+				<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/br30017_.htm');" title="Knowledge Center link to Transforming a SOAP message in a message map">Transforming a SOAP message in a message map</a> </li>
 			   	
 			
 			</ul>
 		</div>
 				  
+        -->
+        
     </div><!-- End Columns -->
     <div class="small-offset-1 small-5 medium-offset-1 medium-5 large-offset-1 large-5 columns">
       <div class="row">
@@ -97,11 +103,11 @@
           </div>
           <div class="row" style="margin-left: 1rem; text-align: center">
             <action>
-              <div class="small radius button" id="startTutorial" onclick="startTutorialFromDetailsScreen()"> Start Tutorial
-            </div>
+              <button class="small radius button" tabindex="0" id="startTutorial" onclick="startTutorialFromDetailsScreen()"> Start Tutorial
+            </button>
             </action>
-            <div class="small radius button" id="backToGallery" onclick="backToGallery()"> Back To Gallery
-			</div>
+            <button class="small radius button" tabindex="0" id="backToGallery" onclick="backToGallery()"> Back To Gallery
+			</button>
           </div>
         </div>
       </div>
@@ -124,7 +130,11 @@
           <ul>
           
           
-            <li>Use IBM Integration Bus to create and invoke a SOAP/HTTP request-response web service.</li>
+            <li>Understand how a SOAP/HTTP web service interface is defined via an integration service.</li>
+          
+            <li>Learn how to implement web service operations in an integration service.</li>
+          
+            <li>Learn how a web service request is represented in App Connect Enterprise, for transformation or routing to another system.</li>
           
           </ul>
         </div>

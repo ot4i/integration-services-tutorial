@@ -43,7 +43,7 @@
 	</div>
 	<div class="row">
 	  <div class="small-9 medium-9 large-9 columns">
-	    <h4 class="title">Integration services (SOAP/HTTP inputs) <action><div class="small radius button" id="stepsViewDetails" onclick="viewDetails()"> View Details</div> </action></h4>
+	    <h4 class="title">Integration services (SOAP/HTTP inputs) <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
 	  </div>
 	  <div class="small-3 medium-3 large-3 columns">
 		<a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm')" class="small right helplink">IBM Knowledge Center</a> 
@@ -52,11 +52,11 @@
 	<hr>
 	<div class="row">
 		<div class="small-10 medium-10 large-10 columns">
-		<h5> Learn about integration services that use SOAP/HTTP inputs in IBM Integration Bus by exploring this simple example. </h5>
+		<h5> Learn about integration services that use SOAP/HTTP inputs </h5>
 		</div>
 		<div class="small-2 medium-2 large-2 columns">
-			<div class="small radius button right" id="backToGallery" onclick="backToGallery()"> Back To Gallery
-			</div>
+			<button class="small radius button right" tabindex="0" id="backToGallery" onclick="backToGallery()"> Back To Gallery
+			</button>
 		</div>
 	</div>
 	<div class="row">          
@@ -82,7 +82,7 @@
 					      	<h4>Import projects</h4>
 					        
 						    
-								<p> The TemperatureConverter integration service includes one project that is imported into your workspace. </p>
+								<p> Click <span class="uicontrol">Import</span> and an integration service project called <span class="uicontrol">TemperatureConverter</span> will be added to your workspace, and the integration service editor will be opened to show you its contents. Next, click Prepare for an explanation of the different parts of the integration service editor. </p>
 								
 							
 						</div>
@@ -114,13 +114,59 @@
 					<div class="small-12 medium-12 large-12 columns">
 					
 						<div class="row content-details">
-						  	<h4>Imported projects</h4>
+						  	<h4>Prepare the tutorial</h4>
 						    
 						    
-								<p> The TemperatureConverter integration service has been imported into your workspace as TemperatureConverter, and is shown in the Application Development view of your workspace. </p>
+								<p> Explore the imported integration service: </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> In the main pane you will see the integration service editor, which you can reopen by clicking on the integration service Description inside the <b>TemperatureConverter</b> project. The editor has two tabs, one called <b>Service</b> and another called <b>Interface</b>.
+										
+										</li>
+									
+										<li> If you click on <b>Interface</b>, you will see the two web service operations which have been defined, along with their input and output types. These are called <b>CtoF</b> and <b>FtoC</b>.
+										
+										</li>
+									
+										<li> If you click back on Service, you will see a link for each operation name defined in the Interface tab, along with links for error handling (named Timeout, Fault and Catch). Click on each of <b>CtoF</b> and <b>FtoC</b> to see the subflow which implements that operation. There is a Mapping node in each one which performs a transformation on the input data, to convert between Celsius and Fahrenheit temperatures.
+										
+										</li>
+									
+										<li> Finally, click on the SOAP/HTTP Binding link and look at the Properties pane; this will show you properties which apply to all operations, such as the URL prefix and whether https is enabled.
+										
+										</li>
+									
+									
+									</ol>
+									
 								
 							
-								<p> Next, you will use the Flow exerciser to invoke and send a SOAP request to the integration service. </p>
+								<p> Create an integration server and connect your App Connect Enterprise Toolkit: </p>
+								
+								
+									
+									<ol>
+									
+									
+										<li> Assuming you are using a Windows platform, open an App Connect Enterprise Command Console and start an integration server using the following command:<br><code>IntegrationServer --work-dir C:\TESTSERVER --name TESTSERVER --admin-rest-api 7600 --http-port-number 7800 --console-log</code> <br>where <b>C:\TESTSERVER</b> is a folder on your file system that the server will use for its working directory.
+										
+										</li>
+									
+										<li> In the App Connect Enterprise Toolkit Integration Explorer view, right click the folder <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/IntegrationServers.png" alt> and select the menu item  <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/ConnectToAnIntegrationServer.png" alt>. In the connection details panel, specify the <b>Host name</b> to be <b>localhost</b>, the <b>Port</b> to be <b>7600</b> and click Finish. This will connect your Toolkit and display the integration server that you started in the last step <img src="https://ot4i.github.io/ot4i.tutorials//dist/images/icons/ace/TESTSERVER.png" alt>
+										
+										</li>
+									
+										<li> Locate <b>TemperatureConverter.bar</b> inside the <b>TemperatureConverter</b> integration service in the Application Development view, and deploy it by dragging and dropping the BAR file on to the integration server in the Integration Explorer view.
+										
+										</li>
+									
+									
+									</ol>
+									
 								
 							
 						</div>
@@ -145,54 +191,35 @@
 		    		<div class="small-10 medium-10 large-10 columns divider">
 					
 				    	<div class="row content-details">
-					      	<h4>Follow these steps to complete the tutorial</h4>
+					      	<h4>Test the integration service to complete the tutorial</h4>
 					        
 						    
-								<p> The Temperature Converter integration service is shown in the Application Development view of your workspace. </p>
+								<p> Test the <b>TemperatureConverter</b> integration service by sending it data using an HTTP client such as cURL: </p>
 								
 								
 									
 									<ol>
 									
 									
-										<li> Open the Integration Service Description of the TemperatureConverter service, and click the Start Flow exerciser icon <img src="https://ot4i.github.io/iib-tutorials/images/icons/iib/startFlowExerciser.png" alt=""> to start recording the message path through the integration service.
+										<li> <code>cd C:\workspace</code><br> where <b>C:\workspace</b> is the location of your Toolkit Eclipse workspace directory on the filesystem.<br><code>curl -X POST http://localhost:7800/TemperatureConverter/TemperatureConverter -d @.\TemperatureConverter\CtoFrequest.xml</code>
 										
 										</li>
 									
-										<li> Click the Send Message icon <img src="https://ot4i.github.io/iib-tutorials/images/icons/iib/sendMessage.png" alt=""> and create a new input message.
+										<li> This input message looks like this:<br><b>&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://TemperatureConverter"&gt;<br>&lt;soapenv:Body&gt;<br>&lt;tem:CtoF&gt;&lt;TemperatureInC&gt;0&lt;/TemperatureInC&gt;&lt;/tem:CtoF&gt;<br>&lt;/soapenv:Body&gt;<br>&lt;/soapenv:Envelope&gt;</b>
 										
 										</li>
 									
-										<li> Choose the CtoF SOAP operation, edit the message data if you like, and click Send. Your request message is sent to the integration service SOAP input.
+										<li> The reply message should look like this:<br><b>&lt;?xml version="1.0" encoding="utf-8"?&gt;<br>&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"&gt;<br>&lt;soapenv:Body&gt;<br>&lt;io:CtoFResponse xmlns:io="http://TemperatureConverter"&gt;&lt;TemperatureInF&gt;32&lt;/TemperatureInF&gt;&lt;/io:CtoFResponse&gt;<br>&lt;/soapenv:Body&gt;<br>&lt;/soapenv:Envelope&gt;</b>
+										
+										</li>
+									
+										<li> You can use the provided input file named <b>FtoCrequest.xml</b> to test the integration service's other operation.
 										
 										</li>
 									
 									
 									</ol>
 									
-								
-							
-								<p> After the request message is processed by the integration service, the message path is automatically highlighted on the service description diagram. </p>
-								
-								
-									
-									<ul>
-									
-									
-										<li> Click on the highlighted operation to see the message path through the operation subflow.
-										
-										</li>
-									
-										<li> You can click on any connection to see the data that passed through that connection. You can see that the request (input) message data shows the temperature in Celsius in the TemperatureInC XML element, and the response (output) message has converted this to a TemperatureInF XML element.
-										
-										</li>
-									
-									
-									</ul>
-									
-								
-							
-								<p> To stop recording the message path through the flow, click the Return flow to edit mode icon <img src="https://ot4i.github.io/iib-tutorials/images/icons/iib/stopFlowExerciser.png" alt="Return flow to edit mode">. </p>
 								
 							
 						</div>
@@ -208,7 +235,7 @@
 							
 								
 																
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/rt26110_.htm')" title="Knowledge Center link to Testing your message flow by using the Flow exerciser">Testing your message flow by using the Flow exerciser</a> </li>
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bc10541_.htm')" title="Knowledge Center link to Downloading integration service interface files using the web user interface">Downloading integration service interface files using the web user interface</a> </li>
 							   	
 							
 							</ul>
