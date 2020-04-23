@@ -31,7 +31,7 @@
 			"resourceToOpen": "MainService",
 			"helpLink": {
 				"text": "IBM Knowledge Center",
-				"link": "/com.ibm.ace.home.doc/help_home.htm"
+				"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm"
 			}
 		},
 		"pageDetails": {
@@ -73,12 +73,14 @@
 				"details": [{
 						"title": "Knowledge Center link to ",
 						"description": "Developing integration solutions by using integration services",
-						"link": "com.ibm.etools.mft.doc/bi12004_.htm"
+						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12004_.htm",
+					    "type": "web"
 					},
 					{
 						"title": "Knowledge Center link to ",
 						"description": "Transforming a SOAP message in a message map",
-						"link": "com.ibm.etools.mft.doc/br30017_.htm"
+						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/br30017_.htm",
+						"type": "web"
 					}
 
 				]
@@ -98,7 +100,8 @@
 					"details": [{
 						"title": "Knowledge Center link to ",
 						"description": "Developing integration solutions by using integration services",
-						"link": "com.ibm.etools.mft.doc/bi12004_.htm"
+						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12004_.htm",
+						"type": "web"
 					}]
 				},
 				"actions": {
@@ -156,7 +159,8 @@
 					"details": [{
 						"title": "Knowledge Center link to ",
 						"description": "Developing integration solutions by using integration services",
-						"link": "com.ibm.etools.mft.doc/bi12004_.htm"
+						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12004_.htm",
+						"type": "web"
 					}]
 				},
 				"actions-removed": {
@@ -205,12 +209,14 @@
 					"details": [{
 							"title": "Knowledge Center link to ",
 							"description": "Developing integration solutions by using integration services",
-							"link": "com.ibm.etools.mft.doc/bi12004_.htm"
+							"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12004_.htm",
+						    "type": "web"
 						},
 						{
 							"title": "Knowledge Center link to ",
 							"description": "Downloading integration service interface files using the web user interface",
-							"link": "com.ibm.etools.mft.doc/bc10541_.htm"
+							"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bc10541_.htm",
+							"type": "web"
 						}
 					]
 				},
