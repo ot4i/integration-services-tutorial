@@ -127,7 +127,7 @@
 								"details": [{
 										"details": "In the main pane you will see the integration service editor, which you can reopen by clicking on the integration service Description inside the <b>TemperatureConverter</b> project. The editor has two tabs, one called <b>Service</b> and another called <b>Interface</b>."		},									{
 										"details": "If you click on <b>Interface</b>, you will see the two web service operations which have been defined, along with their input and output types. These are called <b>CtoF</b> and <b>FtoC</b>."				},									{
-										"details": "If you click back on Service, you will see a link for each operation name defined in the Interface tab, along with links for error handling (named Timeout, Fault and Catch). Click on each of <b>CtoF</b> and <b>FtoC</b> to see the subflow which implements that operation. There is a Mapping node in each one which performs a transformation on the input data, to convert between Celsius and Fahrenheit temperatures."
+										"details": "If you click back on Service, you will see a link for each operation name defined in the Interface tab, along with links for error handling (named Timeout, Failure and Catch). Click on each of <b>CtoF</b> and <b>FtoC</b> to see the subflow which implements that operation. There is a Mapping node in each one which performs a transformation on the input data, to convert between Celsius and Fahrenheit temperatures."
 									},
 									{
 										"details": "Finally, click on the SOAP/HTTP Binding link and look at the Properties pane; this will show you properties which apply to all operations, such as the URL prefix and whether https is enabled."
@@ -211,12 +211,6 @@
 							"description": "Developing integration solutions by using integration services",
 							"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12004_.htm",
 						    "type": "web"
-						},
-						{
-							"title": "Knowledge Center link to ",
-							"description": "Downloading integration service interface files using the web user interface",
-							"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bc10541_.htm",
-							"type": "web"
 						}
 					]
 				}
