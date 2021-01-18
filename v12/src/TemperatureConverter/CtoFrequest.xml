@@ -1,0 +1,7 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://TemperatureConverter">
+   <soapenv:Body>
+      <tem:CtoF>
+         <TemperatureInC>0</TemperatureInC>
+      </tem:CtoF>
+   </soapenv:Body>
+</soapenv:Envelope>

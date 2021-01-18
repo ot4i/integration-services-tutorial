@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="gen" version="8.0.4.0" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="gen">
+    <input path="/TemperatureConverter_InlineSchema1.xsd"/>
+    <output path="/TemperatureConverter_InlineSchema1.xsd"/>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="FtoC_Request_Response_Mapping_F_to_C">
+        <input namespace="http://TemperatureConverter" path="mb:msg(FtoC,assembly,XMLNSC,Properties)"/>
+        <output namespace="http://TemperatureConverter" path="mb:msg(FtoCResponse,assembly,XMLNSC,Properties)"/>
+        <move>
+            <input path="Properties"/>
+            <output path="Properties"/>
+        </move>
+        <expression>
+            <input path="FtoC/TemperatureInF" var="TemperatureInF"/>
+            <output path="FtoCResponse/TemperatureInC"/>
+            <code lang="xpath">5 div 9 * ($TemperatureInF - 32)</code>
+        </expression>
+    </mappingDeclaration>
+</mappingRoot>

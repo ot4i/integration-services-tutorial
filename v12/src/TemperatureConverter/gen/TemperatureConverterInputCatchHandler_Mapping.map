@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="gen" version="8.0.4.0" xmlns="http://www.ibm.com/2008/ccl/Mapping" xmlns:map="gen">
+    <input path="jar:file://!com/ibm/etools/mft/map/xsds/predefined/SOAPDomainMsg.xsd" var="var1"/>
+    <input path="/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd" var="var"/>
+    <input path="/IBMdefined/org/xmlsoap/schemas/soap/envelope/soapenv11.xsd" var="var2"/>
+    <output path="jar:file://!com/ibm/etools/mft/map/xsds/predefined/SOAPDomainMsg.xsd"/>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="TemperatureConverterInputCatchHandler_Mapping">
+        <input path="$var1/mb:msg(SOAP_Domain_Msg,assembly,SOAP,Properties)"/>
+        <output path="mb:msg(SOAP_Domain_Msg,assembly,SOAP,Properties)">
+            <cast path="SOAP_Domain_Msg/Body/any" qualifier="{http://schemas.xmlsoap.org/soap/envelope/}Fault" ref="var"/>
+        </output>
+        <move>
+            <input path="Properties"/>
+            <output path="Properties"/>
+        </move>
+        <assign value="soapenv:Server">
+            <output path="SOAP_Domain_Msg/Body/Fault/faultcode"/>
+        </assign>
+        <assign value="Exception occurred in the integration service, while executing a map in the operation subflow">
+            <output path="SOAP_Domain_Msg/Body/Fault/faultstring/text()"/>
+        </assign>
+    </mappingDeclaration>
+</mappingRoot>
