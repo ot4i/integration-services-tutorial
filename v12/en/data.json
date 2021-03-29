@@ -35,7 +35,7 @@
 			}
 		},
 		"pageDetails": {
-			"topicsName": "Tutorial Topics",
+			"topicsName": "Tutorial topics",
 			"topicList": [{
 					"title": "Integration services"
 				},
