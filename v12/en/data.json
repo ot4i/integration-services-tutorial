@@ -30,8 +30,8 @@
 			"durationTime": "5 minutes",
 			"resourceToOpen": "MainService",
 			"helpLink": {
-				"text": "IBM Knowledge Center",
-				"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm"
+				"text": "IBM Documentation",
+				"link": "https://www.ibm.com/docs/SSTTDS_12.0/com.ibm.etools.mft.doc/acesw_home.html"
 			}
 		},
 		"pageDetails": {
@@ -71,15 +71,15 @@
 			"helpLinks": {
 				"title": "Find out more",
 				"details": [{
-						"title": "Knowledge Center link to ",
+						"title": "IBM Documentation link to ",
 						"description": "Developing integration solutions by using integration services",
-						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12004_.htm",
+						"link": "https://www.ibm.com/docs/SSTTDS_12.0/com.ibm.etools.mft.doc/bi12004_.htm",
 					    "type": "web"
 					},
 					{
-						"title": "Knowledge Center link to ",
+						"title": "IBM Documentation link to ",
 						"description": "Transforming a SOAP message in a message map",
-						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/br30017_.htm",
+						"link": "https://www.ibm.com/docs/SSTTDS_12.0/com.ibm.etools.mft.doc/br30017_.htm",
 						"type": "web"
 					}
 
@@ -98,9 +98,9 @@
 				"helpLinks": {
 					"title": "Find out more",
 					"details": [{
-						"title": "Knowledge Center link to ",
+						"title": "IBM Documentation link to ",
 						"description": "Developing integration solutions by using integration services",
-						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12004_.htm",
+						"link": "https://www.ibm.com/docs/SSTTDS_12.0/com.ibm.etools.mft.doc/bi12004_.htm",
 						"type": "web"
 					}]
 				},
@@ -157,9 +157,9 @@
 				"helpLinks": {
 					"title": "Find out more",
 					"details": [{
-						"title": "Knowledge Center link to ",
+						"title": "IBM Documentation link to ",
 						"description": "Developing integration solutions by using integration services",
-						"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12004_.htm",
+						"link": "https://www.ibm.com/docs/SSTTDS_12.0/com.ibm.etools.mft.doc/bi12004_.htm",
 						"type": "web"
 					}]
 				},
@@ -207,9 +207,9 @@
 				"helpLinks": {
 					"title": "Find out more",
 					"details": [{
-							"title": "Knowledge Center link to ",
+							"title": "IBM Documentation link to ",
 							"description": "Developing integration solutions by using integration services",
-							"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12004_.htm",
+							"link": "https://www.ibm.com/docs/SSTTDS_12.0/com.ibm.etools.mft.doc/bi12004_.htm",
 						    "type": "web"
 						}
 					]
